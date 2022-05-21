@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader component should not render 1`] = `<DocumentFragment />`;
+
+exports[`loader component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-white"
+  />
+  <div
+    class="bg-white"
+  >
+    <img
+      alt=""
+      src="loader.gif"
+    />
+  </div>
+</DocumentFragment>
+`;

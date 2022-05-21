@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Step component renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="fullwidth_"
+  >
+    <div
+      class="container_ separator_"
+    >
+      <ul
+        class="progress-tracker progress-tracker--text progress-tracker--center m-0 mt-4"
+      >
+        <li
+          class="progress-step is-complete"
+        >
+          <a
+            href="/hotels/search"
+          >
+            <div
+              class="progress-marker"
+            />
+            <div
+              class="progress-text"
+            >
+              <h4
+                class="progress-title"
+              >
+                Seleccionar
+              </h4>
+            </div>
+          </a>
+        </li>
+        <li
+          class="progress-step is-complete"
+        >
+          <div
+            class="progress-marker"
+          />
+          <div
+            class="progress-text"
+          >
+            <h4
+              class="progress-title"
+            >
+              Seleccionar2
+            </h4>
+          </div>
+        </li>
+        <li
+          class="progress-step is-complete"
+        >
+          <div
+            class="progress-marker"
+          />
+          <div
+            class="progress-text"
+          >
+            <h4
+              class="progress-title"
+            >
+              Seleccionar3
+            </h4>
+          </div>
+        </li>
+        <li
+          class="progress-step is-active"
+        >
+          <div
+            class="progress-marker"
+          />
+          <div
+            class="progress-text"
+          >
+            <h4
+              class="progress-title"
+            >
+              Seleccionar4
+            </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;

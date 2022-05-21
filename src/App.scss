@@ -1,0 +1,89 @@
+@use "theme/variables";
+variables.$theme-color1: #000;
+// panam $theme-color1: #972d7a;
+variables.$theme-color2: #565857;
+$publicpath: "";
+
+@use "theme/style";
+@use "theme/menu";
+@use "theme/price-range";
+@use "theme/rtl";
+@use "theme/theme-dark";
+@use "theme/responsive";
+/* @import "node_modules/progress-tracker/src/styles/progress-tracker.scss";
+ */.progress-marker {
+	z-index: 2;
+}
+.price-label {
+	font-size: 14px;
+	color: white;
+	background-color: variables.$theme-color1;
+	left: -40%;
+	border-radius: 50px;
+	padding: 5px 14px 3px;
+	line-height: 1;
+	font-weight: 600;
+	text-transform: uppercase;
+	top: 4px;
+}
+.price-selector .rs-slider-progress-bar {
+	background-color: variables.$theme-color1;
+}
+.price-selector .rs-slider-handle::before {
+	border-color: variables.$theme-color1;
+}
+.hotels-step .rs-hotel-step-item {
+	border-color: var(variables.$theme-color1);
+	background-color: var(variables.$theme-color1);
+	color: #f7f7fa;
+}
+.cartContainer {
+	z-index: 4;
+	position: fixed;
+	top: 50px;
+	margin-left: -10px;
+	background-color: variables.$theme-color1;
+	width: 4em;
+	height: 4em;
+	border-radius: 16px;
+}
+.bookingSectionCard {
+	z-index: -1;
+	width: 330px;
+	top: 75px;
+	position: fixed;
+	max-height: 700px;
+	overflow-y: auto;
+}
+.bookingSectionCard-visible {
+	z-index: 3;
+}
+.cartIcon {
+	color: #f7f7fa;
+	margin: 11px;
+}
+.cartBadge {
+	margin-top: -10px;
+}
+.refundBox-NoRefund {
+	color: variables.$red-heart;
+}
+.refundBox-Refund {
+	color: variables.$theme-color2;
+}
+.search-panel {
+	width: max-content;
+	width: -webkit-fill-available;
+	border-radius: 18px;
+}
+.search-panel input {
+	text-align: center;
+    border: none;
+}
+.search-panel .spanDestination {
+	text-align: center;
+    border: none;
+}
+.single-section {
+	min-height: 48.55vh;
+}
