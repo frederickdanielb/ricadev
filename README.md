@@ -1,0 +1,1 @@
+# rica-template-react
