@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonTop component should render conrrectly 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 300vh;"
+  />
+</DocumentFragment>
+`;

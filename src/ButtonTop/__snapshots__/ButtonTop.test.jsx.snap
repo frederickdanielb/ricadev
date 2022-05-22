@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`ButtonTop component > should render conrrectly 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 300vh;"
+  />
+</DocumentFragment>
+`;
