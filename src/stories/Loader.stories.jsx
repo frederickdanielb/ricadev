@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Card } from "react-bootstrap";
 
 import Loader from "./../Loader";
 
@@ -7,7 +8,7 @@ export default {
   title: "Example/Loader",
   component: Loader,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
- /*  argTypes: {
+  /*  argTypes: {
     backgroundColor: { control: "color" },
   }, */
 };
@@ -21,9 +22,13 @@ FullPageLoader.args = {
   isFullPage: true,
   loading: true,
 };
-export const InPageLoader = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-InPageLoader.args = {
-  isFullPage: false,
-  loading: true,
-};
+export const InPageLoader = () => (
+  <Card style={{ width: "18rem" }}>
+    <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
+    <Card.Body>
+      <Card.Text>
+        <Loader isFullPage={false} loading />
+      </Card.Text>
+    </Card.Body>
+  </Card>
+);

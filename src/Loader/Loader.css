@@ -1,0 +1,4 @@
+.loader-in-page img{
+    width: fit-content;
+    width: -webkit-fill-available;
+}

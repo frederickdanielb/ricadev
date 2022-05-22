@@ -1,17 +1,17 @@
 import loadingImage from "./../../images/loader.gif";
+import "./Loader.css";
 const Loader = ({ isFullPage = true, loading = false, ...restProps }) => {
+  let className =
+    isFullPage && loading ? "loader-wrapper img-gif" : "loader-in-page";
   return (
     <>
-      <div className="bg-white">
-        {isFullPage && loading && (
-          <div className="loader-wrapper img-gif">
+      {loading && (
+        <div className="bg-white">
+          <div className={className}>
             <img src={loadingImage} alt="" {...restProps} />
           </div>
-        )}
-        {!isFullPage && loading && (
-          <img src={loadingImage} alt="" {...restProps} />
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };

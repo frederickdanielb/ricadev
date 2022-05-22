@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Step } from "./../Step";
+import Step from "./../Step";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -8,8 +8,8 @@ export default {
   component: Step,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    current: 0,
-    linkeable: false,
+    current: { control: "number" },
+    onClick: { action: "clicked" },
   },
 };
 
@@ -18,19 +18,11 @@ const Template = (args) => (
   <Step {...args}>
     <Step.Item title={"Seleccionar"} />
     <Step.Item title={"Reservar"} />
+    <Step.Item title={"Continuar"} />
+    <Step.Item title={"Finalizar"} />
   </Step>
 );
 
 export const NormalStep = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-NormalStep.args = {
-  linkeable: false,
-};
-
-export const LinkeableStep = (
-  <Step linkeable current={0}>
-    <Step.Item title={"Seleccionar"} />
-    <Step.Item title={"Reservar"} />
-    <Step.Item title={"Confirmar"} path={"/test/route"}/>
-  </Step>
-);
+NormalStep.args = {};
