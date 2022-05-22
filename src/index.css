@@ -3534,7 +3534,7 @@ section .black-layer {
     .ticket-section .ticket-box .content .detail {
       max-width: 395px; }
       .ticket-section .ticket-box .content .detail h4 {
-        font-size: calc(14px+(16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 600;
         color: rgba(0, 0, 0, 0.6);
         margin-bottom: 15px; }
