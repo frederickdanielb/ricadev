@@ -9,7 +9,7 @@ const HotelShowcase = ({ hotels = [], gridType, onSelectHotel }) => {
             <HotelCard
               key={"Card-Hotel-" + idx}
               hotel={hotel}
-              hotelIndex={idx}
+              index={idx}
               gridType={gridType}
               onSelectHotel={onSelectHotel}
             ></HotelCard>
