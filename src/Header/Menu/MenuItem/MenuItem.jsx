@@ -1,3 +1,4 @@
+import "./MenuItem.css"
 export default function MenuItem({ onClick, children }) {
   return (
     <li>
