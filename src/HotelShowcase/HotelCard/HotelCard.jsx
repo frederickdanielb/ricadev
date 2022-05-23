@@ -3,9 +3,9 @@ import { decode } from "he";
  */ import "./card.scss";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
-const HotelCard = ({ hotel, hotelIndex, gridType, onSelectHotel }) => {
+const HotelCard = ({ index, hotel, gridType, onSelectHotel }) => {
   const handleClickHotel = () => {
-    if (onClick) onSelectHotel(hotel);
+    if (onSelectHotel) onSelectHotel(index, hotel);
   };
   const getGridType = (gridType) => {
     if (gridType === 2) return "col-sm-6 popular grid-item wow fadeInUp";
