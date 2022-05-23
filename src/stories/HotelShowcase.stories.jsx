@@ -285,6 +285,7 @@ export default {
   }, */
   argTypes: {
       gridType: { control: { type: "select", options: [2,3,4] } },
+      onSelectHotel: { action: "onSelectHotel" },
   }
 };
 const Template = (args) => (
@@ -294,7 +295,8 @@ const Template = (args) => (
 export const HotelShowcaseTwoColumns = Template.bind({})
 HotelShowcaseTwoColumns.args = {
     hotels: [mockHotels, mockHotels, mockHotels, mockHotels, mockHotels],
-    gridType: 2
+    gridType: 2,
+
 }
 export const HotelShowcaseThreeColumns = Template.bind({})
 HotelShowcaseThreeColumns.args = {
