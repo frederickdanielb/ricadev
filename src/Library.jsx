@@ -5,3 +5,4 @@ export { default as Header } from "./Header";
 export { default as ButtonTop } from "./ButtonTop";
 export { default as HotelShowcase } from "./HotelShowcase";
 export { default as HotelCard } from "./HotelShowcase/HotelCard";
+export { default as Footer } from "./Footer"
