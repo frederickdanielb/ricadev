@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import HotelShowcase from "../HotelShowcase";
+import HotelCard from "../HotelShowcase/HotelCard";
 const mockHotels = {
   images: [
     {
@@ -286,7 +287,8 @@ export default {
   argTypes: {
       gridType: { control: { type: "select", options: [2,3,4] } },
       onSelectHotel: { action: "onSelectHotel" },
-  }
+    },
+    subcomponents: { HotelCard }
 };
 const Template = (args) => (
     <HotelShowcase {...args} />
