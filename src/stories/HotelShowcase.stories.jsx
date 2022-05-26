@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import HotelShowcase from "../HotelShowcase";
+import HotelCard from "../HotelShowcase/HotelCard";
 const mockHotels = {
   images: [
     {
@@ -277,7 +278,7 @@ const mockHotels = {
 };
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/HotelShowcase",
+  title: "Page/HotelShowcase",
   component: HotelShowcase,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   /*  argTypes: {
@@ -286,7 +287,8 @@ export default {
   argTypes: {
       gridType: { control: { type: "select", options: [2,3,4] } },
       onSelectHotel: { action: "onSelectHotel" },
-  }
+    },
+    subcomponents: { HotelCard }
 };
 const Template = (args) => (
     <HotelShowcase {...args} />

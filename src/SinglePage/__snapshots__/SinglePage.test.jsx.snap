@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`Page Container component > should render conrrectly 1`] = `
+<DocumentFragment>
+  <section
+    class="single-section small-section p-0 pb-4 bg-white"
+  >
+    Test
+  </section>
+</DocumentFragment>
+`;

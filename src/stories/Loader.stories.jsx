@@ -5,7 +5,7 @@ import Loader from "./../Loader";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Loader",
+  title: "Components/Loader",
   component: Loader,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   /*  argTypes: {

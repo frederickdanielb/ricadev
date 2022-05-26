@@ -1,0 +1,338 @@
+// Vitest Snapshot v1
+
+exports[`loader component > should render correctly 1`] = `
+<DocumentFragment>
+  <footer>
+    <div
+      class="footer section-b-space section-t-space"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="row order-row"
+        >
+          <div
+            class="col-xl-2 col-md-6 order-cls"
+          >
+            <div
+              class="footer-title mobile-title"
+            >
+              <h5>
+                contact us
+              </h5>
+            </div>
+            <div
+              class="footer-content"
+            >
+              <div
+                class="contact-detail"
+              >
+                <div
+                  class="footer-logo"
+                >
+                  <img
+                    alt=""
+                    class="img-fluid lazyload"
+                    src="https://www.panamericanaturismo.cl/_ns_img/logo/logoPanamericana200x70.png"
+                  />
+                </div>
+                <ul
+                  class="contact-list"
+                >
+                  <li>
+                    <i
+                      class="fas fa-map-marker-alt"
+                    />
+                     Av. Los Leones 1071
+                  </li>
+                  <li>
+                    <i
+                      class="fas fa-phone-alt"
+                    />
+                     +562 2 476 5800
+                  </li>
+                  <li>
+                    <i
+                      class="fas fa-envelope"
+                    />
+                     test@test.cl
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xl-2 col-md-3"
+          >
+            <div
+              class="footer-space"
+            >
+              <div
+                class="footer-title"
+              >
+                <h5>
+                  Destinos
+                </h5>
+              </div>
+              <div
+                class="footer-content"
+              >
+                <div
+                  class="footer-links"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/3/Caribe"
+                      >
+                        Caribe
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/9/Centro-America"
+                      >
+                        Centro América
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/2/Sudamerica"
+                      >
+                        Sudamérica
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/10/Chile"
+                      >
+                        Chile
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/13/Europa"
+                      >
+                        Europa
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/19/Destinos-Lejanos"
+                      >
+                        Destinos Lejanos
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Destinos/?/Zona/1/USA"
+                      >
+                        Norteamérica
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xl-3 col-md-6"
+          >
+            <div
+              class="footer-title"
+            >
+              <h5>
+                Dónde estámos
+              </h5>
+            </div>
+            <div
+              class="footer-content"
+            >
+              <div
+                class="footer-map"
+              >
+                <iframe
+                  allowfullscreen=""
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.768936005934!2d-70.60544108480117!3d-33.42926798078003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf72251d4829%3A0xe2cfa9b2f844f83c!2sAv.%20Los%20Leones%201071%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1647817812809!5m2!1ses-419!2scl"
+                  title="google-map"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xl-2 col-md-3 order-cls"
+          >
+            <div
+              class="footer-space"
+            >
+              <div
+                class="footer-title"
+              >
+                <h5>
+                  Sobre nosotros
+                </h5>
+              </div>
+              <div
+                class="footer-content"
+              >
+                <div
+                  class="footer-links"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Cotiza-Tu-Viaje"
+                      >
+                        Cotiza tu viaje
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Agente-Especial"
+                      >
+                        Agente especial
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/Politicas-y-Condiciones/Politicas-de-Privacidad/"
+                      >
+                        Políticas de Privacidad
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href=""
+                      >
+                        Condiciones y Términos de Uso
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.panamericanaturismo.cl/_pdf/20170731_Politica_explotacion_sexual_en_turismo.pdf"
+                      >
+                        Política sobre la explotación sexual
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xl-3 col-md-6"
+          >
+            <div
+              class="footer-title"
+            >
+              <h5>
+                Sponsored
+              </h5>
+            </div>
+            <div
+              class="footer-content"
+            >
+              <img
+                alt=""
+                class="img-fluid lazyload"
+                src="https://www.panamericanaturismo.cl/_ns_img/footer/logo-web-pay-plus.png"
+                width="200"
+              />
+              <img
+                alt=""
+                class="img-fluid lazyload"
+                src="https://www.panamericanaturismo.cl/_ns_img/footer/logo-iata-achet.png"
+                width="200"
+              />
+              <img
+                alt=""
+                class="img-fluid lazyload"
+                src="https://www.tsyacom.cl/images/logo.png"
+                width="200"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sub-footer"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="row "
+        >
+          <div
+            class="col-xl-6 col-md-6 col-sm-12"
+          >
+            <div
+              class="footer-social"
+            >
+              <ul>
+                <li>
+                  <a
+                    href="/"
+                  >
+                    <i
+                      class="fab fa-facebook-f"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                  >
+                    <i
+                      class="fab fa-instagram"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                  >
+                    <i
+                      class="fab fa-twitter"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                  >
+                    <i
+                      class="fab fa-google"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-xl-6 col-md-6 col-sm-12"
+          >
+            <div
+              class="copy-right"
+            >
+              <p>
+                <i
+                  class="fas fa-heart"
+                />
+                 
+                <a
+                  href="https://www.tsyacom.cl"
+                >
+                  Tsyacom
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

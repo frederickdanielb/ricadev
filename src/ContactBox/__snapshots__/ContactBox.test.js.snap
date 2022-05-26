@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contact box component and when component not have config should not render params not mapped 1`] = `
+<DocumentFragment>
+  <div
+    class="single-sidebar undefined"
+  >
+    <h6
+      class="contact-title"
+    >
+      Contáctanos
+    </h6>
+    <div
+      class="social-box"
+    >
+      <ul />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`contact box component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="single-sidebar undefined"
+  >
+    <h6
+      class="contact-title"
+    >
+      Contáctanos
+    </h6>
+    <p
+      class="address"
+    >
+      <i
+        class="fas fa-map-marker-alt"
+      />
+      Av. Los Leones 1071
+    </p>
+    <p>
+      <i
+        class="fas fa-phone-alt"
+      />
+       +562 2 476 5800
+    </p>
+    <a
+      href="mailto:test@test.cl"
+    >
+      <p>
+        <i
+          class="fas fa-envelope"
+        />
+        test@test.cl
+      </p>
+    </a>
+    <div
+      class="social-box"
+    >
+      <ul>
+        <li>
+          <a
+            href="https://www.facebook.com/TurismoPanamericana/"
+          >
+            <i
+              class="fab fa-facebook-f"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/channel/UCGiVnhb-GDcDujk1K8PC_8g"
+          >
+            <i
+              class="fab fa-youtube"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
