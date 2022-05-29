@@ -129,6 +129,7 @@ Default.args = {
 					<Step.Item title={"data item"} />
 					<Step.Item title={"data item2"} />
 					<Step.Item title={"data item3"} />
+					<Step.Item title={"data item4"} />
 				</Step>
 			</SinglePage>
 			<Footer config={mockConfig} />

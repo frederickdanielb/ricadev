@@ -29,17 +29,16 @@ const Nav = ({
 		
     `;
 	const NavHeader = StyledComponent.div`
+		height: 60px;
+        padding-left: 40px;
+        padding-right: 40px;
+		background-color: #662482;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		border-radius: 0rem 0rem 2.5rem 2.5rem;
-		height: 60px;
-		background-color: #662482;
-        padding-left: 40px;
-        padding-right: 40px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 5px 5px 13px 13px;
 	`;
 	const NavItems = StyledComponent.div`
 		display: flex;

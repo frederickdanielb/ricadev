@@ -1,9 +1,20 @@
-import StepItem from "./StepItem";
-import PropTypes from "prop-types";
-import { mapCloneElement } from "../utils/Children";
-import "./Step.scss"
+import StepItem from './StepItem';
+import PropTypes from 'prop-types';
+import { mapCloneElement } from '../utils/Children';
+import './Step.scss';
+import styledComponents from 'styled-components';
 const Step = ({ children, current, onClick = () => {}, linkeable }) => {
-		const items = mapCloneElement(children, (item, index) => {
+	const StepsContainer = styledComponents.div`
+			margin-top: 20px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			background-color: #662482;
+			width: 100%;
+		`;
+	const items = mapCloneElement(children, (item, index) => {
 		const itemProps = {
 			index: index,
 			isActive: index === current,
@@ -14,13 +25,11 @@ const Step = ({ children, current, onClick = () => {}, linkeable }) => {
 		return itemProps;
 	});
 	return (
-		<div className="fullwidth_">
-			<div className="container_ separator_">
-				<ul className="progress-tracker progress-tracker--text progress-tracker--center m-0 mt-4">
-					{items}
-				</ul>
-			</div>
-		</div>
+		<StepsContainer>
+			<ul className="progress-tracker progress-tracker--text progress-tracker--center m-0 mt-4">
+				{items}
+			</ul>
+		</StepsContainer>
 	);
 };
 Step.Item = StepItem;
@@ -29,11 +38,11 @@ Step.propTypes = {
 	children: PropTypes.arrayOf(
 		PropTypes.shape({
 			type: PropTypes.oneOf([Step.Item]),
-		})
+		}),
 	),
 	/** Current step */
 	current: PropTypes.number.isRequired,
 	/** Function to be called when a step is clicked */
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
 };
 export default Step;
