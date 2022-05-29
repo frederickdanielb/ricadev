@@ -20,7 +20,7 @@ const Nav = ({
 	`;
 	const SubNavContainer = StyledComponent.div`
 		display: flex;
-		padding: 0 0 0 40px;
+		padding: 0 15px 0 40px;
 		flex-direction: row;
 		@media (max-width: 768px) {
 		  flex-direction: column;

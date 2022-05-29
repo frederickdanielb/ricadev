@@ -13308,7 +13308,9 @@ section .black-layer {
 24. Footer css
 ==========================*/
 footer .footer {
-  background-color: #1b1b1b; }
+  background-color: #1b1b1b; 
+  border-radius: 2.5rem 2.5rem 0rem 0rem ;
+}
   footer .footer .footer-space {
     padding-left: 50px; }
   footer .footer .footer-title.mobile-title {
