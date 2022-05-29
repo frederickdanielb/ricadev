@@ -6,6 +6,7 @@ import styledComponents from 'styled-components';
 const Step = ({ children, current, onClick = () => {}, linkeable }) => {
 	const StepsContainer = styledComponents.div`
 			margin-top: 20px;
+			margin-bottom: 20px;
 			flex-wrap: wrap;
 			justify-content: space-between;
 			align-items: center;
