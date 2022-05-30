@@ -1,5 +1,6 @@
 import React from 'react';
 import ButtonTop from '../ButtonTop';
+import ThemeProvider from '../Context/ThemeProvider';
 import Footer from '../Footer';
 import Header from '../Header';
 import Nav from '../Nav/Nav';
@@ -109,7 +110,7 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
 	children: (
-		<>
+		<ThemeProvider>
 			<Nav
 				logo={mockConfig.page.logo_url}
 				userDisplayName={'Test User'}
@@ -133,6 +134,6 @@ Default.args = {
 				</Step>
 			</SinglePage>
 			<Footer config={mockConfig} />
-		</>
+		</ThemeProvider>
 	),
 };

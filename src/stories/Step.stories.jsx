@@ -19,6 +19,8 @@ const Template = (args) => (
     <Step.Item title={"Seleccionar"} />
     <Step.Item title={"Reservar"} />
     <Step.Item title={"Continuar"} />
+    <Step.Item title={"Continuar"} />
+    <Step.Item title={"Continuar"} />
     <Step.Item title={"Finalizar"} />
   </Step>
 );

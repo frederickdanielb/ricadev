@@ -15,13 +15,13 @@ const NavItem = ({ onClick, children }) => {
     margin-right: 15px;
     font-size: 16px;
     color: #000;
-    border-bottom: 2px solid #662482;
+    border-bottom: 2px solid  ${props =>{ return props.theme ? props.theme.colors.primary: '#ffffff'}};
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
     &:hover {
-        border-bottom: 2px solid #662482;
-        color: #662482;
+        border-bottom: 2px solid  ${props =>{ return props.theme ? props.theme.colors.primary: '#ffffff'}};
+        color:  ${props =>{ return props.theme ? props.theme.colors.primary: '#ffffff'}};
     }
 `;
 	return <TextContainer onClick={onClick}>{children}</TextContainer>;

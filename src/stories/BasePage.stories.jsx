@@ -1,5 +1,6 @@
 import React from 'react';
 import ButtonTop from '../ButtonTop';
+import ThemeProvider from '../Context/ThemeProvider';
 import Footer from '../Footer';
 import Header from '../Header';
 import SinglePage from '../SinglePage';
@@ -100,7 +101,7 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <BasePage {...args} />;
+const Template = (args) => <ThemeProvider><BasePage {...args} /></ThemeProvider>;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

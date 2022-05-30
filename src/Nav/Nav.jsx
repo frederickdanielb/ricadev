@@ -1,6 +1,6 @@
 import { faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import StyledComponent from 'styled-components';
+import styled from 'styled-components';
 import './Nav.scss';
 const Nav = ({
 	logo,
@@ -14,11 +14,11 @@ const Nav = ({
 }) => {
 	const _loginButtonText = 'Login';
 	const _logoutButtonText = 'Logout';
-	const NavContainer = StyledComponent.div`
+	const NavContainer = styled.div`
 		width: 100%;
 		background-color: #ffffff;
 	`;
-	const SubNavContainer = StyledComponent.div`
+	const SubNavContainer = styled.div`
 		display: flex;
 		padding: 0 15px 0 40px;
 		flex-direction: row;
@@ -28,11 +28,11 @@ const Nav = ({
 		justify-content: end;
 		
     `;
-	const NavHeader = StyledComponent.div`
+	const NavHeader = styled.div`
 		height: 60px;
         padding-left: 40px;
         padding-right: 40px;
-		background-color: #662482;
+		background-color: ${props =>{ return props.theme ? props.theme.colors.primary: '#ffffff'}};
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -40,30 +40,38 @@ const Nav = ({
 		border-radius: 0rem 0rem 2.5rem 2.5rem;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	`;
-	const NavItems = StyledComponent.div`
+	const NavItems = styled.div`
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: end;
 	`;
-	const NavItem = StyledComponent.div`
+	const NavItem = styled.div`
 		align-self: center;
 		color: #ffffff;
 		margin-left: 15px;
 	`;
-	const NavLogo = StyledComponent.div`
+	const UserItem = styled.div`
+		@media (max-width: 768px) {
+			display: none;
+		}
+	`;
+	const NavLogo = styled.div`
 		justify-content: start;
 	`;
-	const LoginButton = StyledComponent.button`
+	const LoginButton = styled.button`
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
 		color: #ffffff;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	`;
-	const Logo = StyledComponent.img`
+	const Logo = styled.img`
 		height: 55px;
 	`;
-	const UserIcon = StyledComponent.div`
+	const UserIcon = styled.div`
 	display:inline;
 	margin-right: 5px;
 	`;
@@ -81,12 +89,14 @@ const Nav = ({
 					</NavLogo>
 					<NavItems>
 						{userDisplayName && (
-							<NavItem>
-								<UserIcon>
-									<FontAwesomeIcon icon={faUser} />
-								</UserIcon>
-								{userDisplayName}
-							</NavItem>
+							<UserItem>
+								<NavItem>
+									<UserIcon>
+										<FontAwesomeIcon icon={faUser} />
+									</UserIcon>
+									{userDisplayName}
+								</NavItem>
+							</UserItem>
 						)}
 						<NavItem>
 							{!isLoggedIn && (
