@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const Solid = styled.button`
+
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 0;
+    text-decoration: none;
     text-transform: uppercase;
 	background-color: ${(props) => {
 		return props.theme && props.primary
@@ -45,6 +51,11 @@ export const Solid = styled.button`
 `;
 
 export const Outline = styled.button`
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 0;
+    text-decoration: none;
     text-transform: uppercase;
 	background-color: white;
 	color: ${(props) => {
