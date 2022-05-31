@@ -112,6 +112,16 @@ const Template = (args) => (
 		<ButtonOutline secondary rounded>
 			Button
 		</ButtonOutline>
+        <br />
+		<br />
+		<ButtonSolid secondary rounded disabled>
+			Button
+		</ButtonSolid>
+		<br />
+		<br />
+		<ButtonOutline primary rounded disabled>
+			Button
+		</ButtonOutline>
 	</ThemeProvider>
 );
 

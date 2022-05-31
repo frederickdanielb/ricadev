@@ -38,6 +38,10 @@ export const Solid = styled.button`
 	${(props) => {
 		return props.block && 'width: 100%';
 	}};
+    &:disabled{
+        pointer-events: none;
+        opacity: .65;
+    }
 `;
 
 export const Outline = styled.button`
@@ -77,5 +81,9 @@ export const Outline = styled.button`
 	}};
 	${(props) => {
 		return props.block && 'width: 100%';
-	}};
+	}};    
+    &:disabled{
+        pointer-events: none;
+        opacity: .65;
+    }
 `;
