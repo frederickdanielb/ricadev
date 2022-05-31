@@ -10,10 +10,11 @@ export const base = {
 export const rica = {
     background: '#fff',
     primary: '#ef3f3e',
-
+    secondary: '#FF9314',
+    
 }
 export const panam = {
-	background: 'rgb(102, 36, 130)',
+    background: 'rgb(102, 36, 130)',
 	primary: 'rgb(102, 36, 130)',
-    secondary: '#fff'
+    secondary: '#FF9314',
 };
