@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Solid = styled.button`
+    text-transform: uppercase;
 	background-color: ${(props) => {
 		return props.theme && props.primary
 			? props.theme.colors.primary
@@ -40,6 +41,7 @@ export const Solid = styled.button`
 `;
 
 export const Outline = styled.button`
+    text-transform: uppercase;
 	background-color: white;
 	color: ${(props) => {
 		return props.theme && props.secondary
