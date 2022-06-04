@@ -1,4 +1,5 @@
-export default function Topics({topics}) {
+import PropTypes from 'prop-types';
+const Topics = ({ topics }) => {
 	return (
 		<>
 			{topics && (
@@ -8,32 +9,28 @@ export default function Topics({topics}) {
 					</div>
 					<div className="footer-content">
 						<div className="footer-blog">
-							{topics.map(
-								(topic, index) => (
-									<div
-										key={`topic-link-${index}`}
-										className="media"
-									>
-										<div className="img-part">
-											<a href={topic.url}>
-												<img
-													src={topic.image}
-													className="img-fluid lazyload"
-													alt=""
-												/>
-											</a>
-										</div>
-										<div className="media-body">
-											<h5>{topic.title}</h5>
-											<p>{topic.content}</p>
-										</div>
+							{topics.map((topic, index) => (
+								<div key={`topic-link-${index}`} className="media">
+									<div className="img-part">
+										<a href={topic.url}>
+											<img src={topic.image} className="img-fluid lazyload" alt="" />
+										</a>
 									</div>
-								)
-							)}
+									<div className="media-body">
+										<h5>{topic.title}</h5>
+										<p>{topic.content}</p>
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
 			)}
 		</>
 	);
-}
+};
+
+Topics.propTypes = {
+	topics: PropTypes.object.isRequired,
+};
+export default Topics;

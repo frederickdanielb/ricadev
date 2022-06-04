@@ -1,4 +1,4 @@
-export default function SubFooter() {
+const SubFooter = () => {
 	return (
 		<>
 			<div className="sub-footer">
@@ -42,4 +42,5 @@ export default function SubFooter() {
 			</div>
 		</>
 	);
-}
+};
+export default SubFooter;

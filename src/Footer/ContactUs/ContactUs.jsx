@@ -1,4 +1,5 @@
-export default function ContactUs({ logoUrl, contact }) {
+import PropTypes from 'prop-types';
+const ContactUs = ({ logoUrl, contact }) => {
 	return (
 		<>
 			<div className="col-xl-2 col-md-6 order-cls">
@@ -8,29 +9,22 @@ export default function ContactUs({ logoUrl, contact }) {
 				<div className="footer-content">
 					<div className="contact-detail">
 						<div className="footer-logo">
-							<img
-								src={logoUrl}
-								alt=""
-								className="img-fluid lazyload"
-							/>
+							<img src={logoUrl} alt="" className="img-fluid lazyload" />
 						</div>
 						<ul className="contact-list">
 							{contact.address && (
 								<li>
-									<i className="fas fa-map-marker-alt"></i>{" "}
-									{contact.address}
+									<i className="fas fa-map-marker-alt"></i> {contact.address}
 								</li>
 							)}
 							{contact.phone && (
 								<li>
-									<i className="fas fa-phone-alt"></i>{" "}
-									{contact.phone}
+									<i className="fas fa-phone-alt"></i> {contact.phone}
 								</li>
 							)}
 							{contact.email && (
 								<li>
-									<i className="fas fa-envelope"></i>{" "}
-									{contact.email}
+									<i className="fas fa-envelope"></i> {contact.email}
 								</li>
 							)}
 						</ul>
@@ -39,4 +33,10 @@ export default function ContactUs({ logoUrl, contact }) {
 			</div>
 		</>
 	);
-}
+};
+
+ContactUs.propTypes = {
+	contact: PropTypes.object.isRequired,
+	logoUrl: PropTypes.oneOf([PropTypes.object, PropTypes.string]).isRequired,
+};
+export default ContactUs;

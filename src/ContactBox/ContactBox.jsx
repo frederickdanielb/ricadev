@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { faEnvelope, faMapMarkedAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
@@ -44,5 +45,10 @@ const ContactBox = ({ className, contact }) => {
 			</div>
 		</div>
 	);
+};
+
+ContactBox.propTypes = {
+	className: PropTypes.string,
+	contact: PropTypes.object.isRequired,
 };
 export default ContactBox;

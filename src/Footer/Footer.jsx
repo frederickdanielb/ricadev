@@ -1,10 +1,11 @@
-import ContactUs from "./ContactUs";
-import LeftLinks from "./LeftLinks";
-import RightLinks from "./RightLinks";
-import Sponsored from "./Sponsored";
-import SubFooter from "./SubFooter";
-import Topics from "./Topics";
-import WhereWeAre from "./WhereWeAre";
+import PropTypes from 'prop-types';
+import ContactUs from './ContactUs';
+import LeftLinks from './LeftLinks';
+import RightLinks from './RightLinks';
+import Sponsored from './Sponsored';
+import SubFooter from './SubFooter';
+import Topics from './Topics';
+import WhereWeAre from './WhereWeAre';
 
 const Footer = ({ config }) => {
 	return (
@@ -17,7 +18,7 @@ const Footer = ({ config }) => {
 						<WhereWeAre />
 						<RightLinks links={config.page.footer.right_links} />
 						<Topics topics={config.page.footer.topics} />
-						<Sponsored logos={config.page.footer.partners_logos}/>
+						<Sponsored logos={config.page.footer.partners_logos} />
 					</div>
 				</div>
 			</div>
@@ -26,3 +27,7 @@ const Footer = ({ config }) => {
 	);
 };
 export default Footer;
+
+Footer.propTypes = {
+	config: PropTypes.object.isRequired,
+};

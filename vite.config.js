@@ -1,13 +1,12 @@
 const path = require('path');
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import dts from 'vite-dts';
 
 const isExternal = (id) => !id.startsWith('.') && !path.isAbsolute(id);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), dts()],
+	plugins: [react()],
 
 	build: {
 		minify: true,

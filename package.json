@@ -2,7 +2,7 @@
   "name": "@tsyacom/rica-template-react",
   "repository": "git://github.com/tsyacom/rica-template-react.git",
   "private": false,
-  "version": "1.1.5",
+  "version": "1.1.6",
   "files": [
     "dist"
   ],
@@ -43,13 +43,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",
-    "@storybook/addon-actions": "^6.5.3",
-    "@storybook/addon-docs": "^6.5.5",
-    "@storybook/addon-essentials": "^6.5.5",
-    "@storybook/addon-interactions": "^6.5.3",
-    "@storybook/addon-links": "^6.5.3",
-    "@storybook/builder-vite": "^0.1.35",
-    "@storybook/react": "^6.5.3",
+    "@storybook/addon-actions": "^6.5.6",
+    "@storybook/addon-docs": "^6.5.6",
+    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-interactions": "^6.5.6",
+    "@storybook/addon-links": "^6.5.6",
+    "@storybook/builder-vite": "^0.1.36",
+    "@storybook/react": "^6.5.6",
     "@storybook/testing-library": "^0.0.11",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -58,6 +58,5 @@
     "sass": "^1.52.1",
     "vite": "^2.9.9",
     "vite-dts": "^1.0.4"
-  },
-  "types": "./rica-template-react.es.d.ts"
+  }
 }

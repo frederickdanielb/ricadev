@@ -1,4 +1,5 @@
-export default function Sponsored({ logos }) {
+import PropTypes from 'prop-types';
+const Sponsored = ({ logos }) => {
 	return (
 		<>
 			{logos && (
@@ -21,4 +22,9 @@ export default function Sponsored({ logos }) {
 			)}
 		</>
 	);
-}
+};
+export default Sponsored;
+
+Sponsored.propTypes = {
+	logos: PropTypes.arrayOf(PropTypes.oneOf([PropTypes.string, PropTypes.object])).isRequired,
+};
