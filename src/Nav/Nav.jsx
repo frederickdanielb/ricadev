@@ -1,6 +1,7 @@
 import { faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import { ButtonSolid } from '../Buttons';
 import './Nav.scss';
 const Nav = ({
 	logo,
@@ -23,22 +24,23 @@ const Nav = ({
 		padding: 0 15px 0 40px;
 		flex-direction: row;
 		@media (max-width: 768px) {
-		  flex-direction: column;
+			flex-direction: column;
 		}
 		justify-content: end;
-		
-    `;
+	`;
 	const NavHeader = styled.div`
 		height: 60px;
-        padding-left: 40px;
-        padding-right: 40px;
-		background-color: ${props =>{ return props.theme ? props.theme.colors.primary: '#ffffff'}};
+		padding-left: 40px;
+		padding-right: 40px;
+		background-color: ${(props) => {
+			return props.theme ? props.theme.colors.primary : '#ffffff';
+		}};
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		border-radius: 0rem 0rem 2.5rem 2.5rem;
-        box-shadow: 0 .5rem 1rem #00000026;
+		border-radius: 0 0 2.5rem 2.5rem;
+		box-shadow: 0 0.5rem 1rem #00000026;
 	`;
 	const NavItems = styled.div`
 		display: flex;
@@ -59,10 +61,10 @@ const Nav = ({
 		justify-content: start;
 	`;
 	const LoginButton = styled.button`
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
 		color: #ffffff;
 		@media (max-width: 768px) {
 			display: none;
@@ -72,8 +74,8 @@ const Nav = ({
 		height: 55px;
 	`;
 	const UserIcon = styled.div`
-	display:inline;
-	margin-right: 5px;
+		display: inline;
+		margin-right: 5px;
 	`;
 
 	return (
@@ -101,15 +103,19 @@ const Nav = ({
 						<NavItem>
 							{!isLoggedIn && (
 								<LoginButton onClick={onClickLoginButton}>
-									{loginButtonText ? loginButtonText : _loginButtonText}
+									<ButtonSolid secondary rounded>
+										{loginButtonText ? loginButtonText : _loginButtonText}
+									</ButtonSolid>
 								</LoginButton>
 							)}
 							{isLoggedIn && (
 								<LoginButton onClick={onClickLogoutButton}>
-								
-								<UserIcon>
-									<FontAwesomeIcon icon={faTimes} />
-								</UserIcon>	{logoutButtonText ? logoutButtonText : _logoutButtonText}
+									<ButtonSolid secondary rounded>
+										<UserIcon>
+											<FontAwesomeIcon icon={faTimes} />
+										</UserIcon>{' '}
+										{logoutButtonText ? logoutButtonText : _logoutButtonText}
+									</ButtonSolid>
 								</LoginButton>
 							)}
 						</NavItem>

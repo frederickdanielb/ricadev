@@ -1,21 +1,45 @@
-export { ScrollToTop } from "./ScrollToTop";
-export { default as Step } from "./Step";
-export { default as Loader } from "./Loader";
-export { default as Header } from "./Header";
-export { default as ButtonTop } from "./ButtonTop";
-export { default as HotelShowcase } from "./HotelShowcase";
-export { default as HotelCard } from "./HotelShowcase/HotelCard";
-export { default as Footer } from "./Footer"
-export { default as ContactUs } from "./Footer/ContactUs"
-export { default as LeftLinks } from "./Footer/LeftLinks"
-export { default as RightLinks } from "./Footer/RightLinks"
-export { default as Sponsored } from "./Footer/Sponsored"
-export { default as SubFooter } from "./Footer/SubFooter"
-export { default as Topics } from "./Footer/Topics"
-export { default as WhereWeAre } from "./Footer/WhereWeAre"
-export { default as Nav } from "./Nav"
-export { default as NavItem } from "./Nav/NavItem"
-export { default as ContactBox } from "./ContactBox"
-export {default as ThemeProvider } from "./Context/ThemeProvider"
-export { default as useTheme } from "./Hooks/useTheme"
-export { ButtonOutline, ButtonSolid } from "./Buttons"
+import { ScrollToTop } from './ScrollToTop';
+import Step from './Step';
+import Loader from './Loader';
+import Header from './Header';
+import ButtonTop from './ButtonTop';
+import HotelShowcase from './HotelShowcase';
+import HotelCard from './HotelShowcase/HotelCard';
+import Footer from './Footer';
+import ContactUs from './Footer/ContactUs';
+import LeftLinks from './Footer/LeftLinks';
+import RightLinks from './Footer/RightLinks';
+import Sponsored from './Footer/Sponsored';
+import SubFooter from './Footer/SubFooter';
+import Topics from './Footer/Topics';
+import WhereWeAre from './Footer/WhereWeAre';
+import Nav from './Nav';
+import NavItem from './Nav/NavItem';
+import ContactBox from './ContactBox';
+import ThemeProvider from './Context/ThemeProvider';
+import useTheme from './Hooks/useTheme';
+import { ButtonOutline, ButtonSolid } from './Buttons';
+export {
+	ScrollToTop,
+	Step,
+	Loader,
+	Header,
+	ButtonOutline,
+	ButtonSolid,
+	ButtonTop,
+	HotelShowcase,
+	HotelCard,
+	Footer,
+	ContactUs,
+	LeftLinks,
+	RightLinks,
+	Sponsored,
+	SubFooter,
+	Topics,
+	WhereWeAre,
+	Nav,
+	NavItem,
+	ContactBox,
+	ThemeProvider,
+	useTheme,
+};
