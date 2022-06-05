@@ -18,14 +18,19 @@ const Title = ({
 	const Label = styled.span`
 		font-size: 14px;
 		color: white;
-		background-color: #ef3f3e;
+		background-color: ${(props) =>
+			props.theme.colors.primary ? props.theme.colors.primary : '#ef3f3e'};
 		text-transform: uppercase;
 		padding: 4px 18px;
 		line-height: 1.7;
 		border-radius: 3px;
 		font-family: Work Sans, serif;
 		font-weight: 600;
-		${whiteLabel && 'background-color: white; color: #ef3f3e;'}
+		${(props) =>
+			whiteLabel &&
+			`background-color: white; color: ${
+				props.theme.colors.primary ? props.theme.colors.primary : '#ef3f3e'
+			};`}
 		${roundedLabel && 'border-radius: 18px !important;'}
 	`;
 	const TitleH2 = styled.h2`

@@ -13,7 +13,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => (
-	<ThemeProvider>
+	<ThemeProvider theme={'panam'}>
 		<div style={{ height: '100px' }}>
 			<Title {...args}></Title>
 		</div>
