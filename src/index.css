@@ -32386,3 +32386,8 @@ body.dark {
 		height: 110vh;
 	}
 }
+
+
+.contact-list ul{
+	padding-left: 0 !important;
+}
