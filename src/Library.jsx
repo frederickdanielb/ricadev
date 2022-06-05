@@ -19,6 +19,9 @@ import ContactBox from './ContactBox';
 import ThemeProvider from './Context/ThemeProvider';
 import useTheme from './Hooks/useTheme';
 import { ButtonOutline, ButtonSolid } from './Buttons';
+import { Title } from './Typography';
+import PageContainer from './PageContainer';
+import SinglePage from './SinglePage';
 export {
 	ScrollToTop,
 	Step,
@@ -42,4 +45,7 @@ export {
 	ContactBox,
 	ThemeProvider,
 	useTheme,
+	Title,
+	PageContainer,
+	SinglePage,
 };
