@@ -5,7 +5,7 @@ import NavItem from './../Nav/NavItem/NavItem';
 import logo from './assets/footer-logo.png';
 
 export default {
-	title: 'Nav',
+	title: 'Page/Nav',
 	component: Nav,
 	argTypes: {
 		logo: { control: 'text' },
