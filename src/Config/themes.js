@@ -8,13 +8,12 @@ export const base = {
 	fontSizes: ['12px', '14px', '16px', '20px', '24px'],
 };
 export const rica = {
-    background: '#fff',
-    primary: '#ef3f3e',
-    secondary: '#FF9314',
-    
-}
+	background: '#fff',
+	primary: '#ef3f3e',
+	secondary: '#000',
+};
 export const panam = {
-    background: 'rgb(102, 36, 130)',
+	background: 'rgb(102, 36, 130)',
 	primary: 'rgb(102, 36, 130)',
-    secondary: '#FF9314',
+	secondary: '#FF9314',
 };
