@@ -26,5 +26,5 @@ const Sponsored = ({ logos }) => {
 export default Sponsored;
 
 Sponsored.propTypes = {
-	logos: PropTypes.arrayOf(PropTypes.oneOf([PropTypes.string, PropTypes.object])).isRequired,
+	logos: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
 };
