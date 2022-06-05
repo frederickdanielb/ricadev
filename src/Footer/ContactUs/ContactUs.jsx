@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 const ContactUs = ({ logoUrl, contact }) => {
 	return (
 		<>
@@ -14,17 +16,17 @@ const ContactUs = ({ logoUrl, contact }) => {
 						<ul className="contact-list">
 							{contact.address && (
 								<li>
-									<i className="fas fa-map-marker-alt"></i> {contact.address}
+									<FontAwesomeIcon icon={faMapMarkerAlt} /> {contact.address}
 								</li>
 							)}
 							{contact.phone && (
 								<li>
-									<i className="fas fa-phone-alt"></i> {contact.phone}
+									<FontAwesomeIcon icon={faPhoneAlt} /> {contact.phone}
 								</li>
 							)}
 							{contact.email && (
 								<li>
-									<i className="fas fa-envelope"></i> {contact.email}
+									<FontAwesomeIcon icon={faEnvelope} /> {contact.email}
 								</li>
 							)}
 						</ul>
@@ -37,6 +39,6 @@ const ContactUs = ({ logoUrl, contact }) => {
 
 ContactUs.propTypes = {
 	contact: PropTypes.object.isRequired,
-	logoUrl: PropTypes.oneOf([PropTypes.object, PropTypes.string]).isRequired,
+	logoUrl: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
 };
 export default ContactUs;
