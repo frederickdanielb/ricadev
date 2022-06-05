@@ -22,6 +22,7 @@ import { ButtonOutline, ButtonSolid } from './Buttons';
 import { Title } from './Typography';
 import PageContainer from './PageContainer';
 import SinglePage from './SinglePage';
+import AnimatedContainer from './AnimatedContainer';
 export {
 	ScrollToTop,
 	Step,
@@ -48,4 +49,5 @@ export {
 	Title,
 	PageContainer,
 	SinglePage,
+	AnimatedContainer,
 };
