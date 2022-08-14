@@ -6,14 +6,19 @@ export const base = {
 		body: 'Inter, system-ui, sans-serif',
 	},
 	fontSizes: ['12px', '14px', '16px', '20px', '24px'],
+	borderRadius: { button: '100px' },
 };
 export const rica = {
 	background: '#fff',
 	primary: '#ef3f3e',
 	secondary: '#000',
+	white: '#FFF',
+	default: '#000',
 };
 export const panam = {
 	background: 'rgb(102, 36, 130)',
 	primary: 'rgb(102, 36, 130)',
 	secondary: '#FF9314',
+	white: '#FFF',
+	default: '#000',
 };
