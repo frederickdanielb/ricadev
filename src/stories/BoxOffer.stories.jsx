@@ -1,12 +1,11 @@
 import React from 'react';
-import { ButtonSolid, ButtonOutline } from '../Buttons';
 import ThemeProvider from '../Context/ThemeProvider';
 import TemplateSelector from './helpers/TemplateSelector';
-import ButtonRounded from '../Buttons/ButtonRounded';
+import BoxOffer from '../Boxs/BoxOffer';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: 'Buttons/ButtonSolid',
-	component: ButtonSolid,
+	title: 'Box/BoxOffer',
+	component: BoxOffer,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	/*  argTypes: {
     backgroundColor: { control: "color" },
@@ -19,13 +18,7 @@ const Template = (args) => (
 		<TemplateSelector />
 		<br />
 		<br />
-		<ButtonSolid {...args}>Default</ButtonSolid>
-		<br />
-		<br />
-		<ButtonOutline {...args}>Button</ButtonOutline>
-		<br />
-		<br />
-		<ButtonRounded {...args}>Rounded</ButtonRounded>
+		<BoxOffer {...args} />
 	</ThemeProvider>
 );
 
