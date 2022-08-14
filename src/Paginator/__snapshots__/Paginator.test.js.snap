@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginator component should render correctly 1`] = `
+<DocumentFragment>
+  <nav
+    aria-label="Page navigation example"
+    class="pagination-section mt-0"
+  >
+    <ul
+      class="pagination"
+    >
+      <li
+        class="page-item"
+      >
+        <button
+          aria-label="Previous"
+          class="page-link"
+        >
+          <span
+            aria-hidden="true"
+          >
+            «
+          </span>
+          <span
+            class="sr-only"
+          >
+            Anterior
+          </span>
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item active"
+      >
+        <button
+          class="page-link"
+          data-item="0"
+        >
+          1
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="1"
+        >
+          2
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="2"
+        >
+          3
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="3"
+        >
+          4
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="4"
+        >
+          5
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="5"
+        >
+          6
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="6"
+        >
+          7
+        </button>
+      </li>
+      <li
+        class="page-item"
+      />
+      <li
+        class="page-item "
+      >
+        <button
+          class="page-link"
+          data-item="7"
+        >
+          8
+        </button>
+      </li>
+      <li
+        class="page-item"
+      >
+        <button
+          aria-label="Next"
+          class="page-link"
+        >
+          <span
+            aria-hidden="true"
+          >
+            »
+          </span>
+          <span
+            class="sr-only"
+          >
+            Siguiente
+          </span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
