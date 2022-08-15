@@ -7,9 +7,9 @@ export default {
 	title: 'Box/BoxOffer',
 	component: BoxOffer,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-	/*  argTypes: {
-    backgroundColor: { control: "color" },
-  }, */
+	argTypes: {
+		onClick: { action: 'onClick' },
+	},
 };
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
@@ -24,4 +24,14 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = {
+	price: '$200',
+	beforePrice: '$199',
+	couponCode: 'HZ200RC',
+	rating: 5,
+	title: 'Lorem ipsum ga melemele',
+	subtitle: 'Lorem ipsum',
+	image: 'http://placekitten.com/300/370',
+	description:
+		'Lorem ipsum ga melemele ipsum pipirum orem ipsum ga melemele ipsum pipirum orem ipsum ga melemele ipsum pipirum',
+};

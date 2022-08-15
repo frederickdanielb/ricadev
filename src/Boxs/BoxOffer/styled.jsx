@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Content = styled.div`
 	//padding: 45px 30px 45px 156px;
@@ -174,19 +174,6 @@ const HeartIcon = styled.i`
 	justify-content: center;
 	border-radius: 100%;
 `;
-const Rating = styled.div`
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-`;
-const Star = styled.i`
-	font-size: 12px;
-	margin: 0 2px;
-	color: #ffcc33;
-`;
 const OfferDescription = styled.p`
 	font-size: 14px;
 	line-height: 1.5;
@@ -255,6 +242,4 @@ export {
 	HeartEffect,
 	HeartIcon,
 	OfferDescription,
-	Star,
-	Rating,
 };

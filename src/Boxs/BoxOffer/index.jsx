@@ -1,25 +1,57 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
-import { BottomDel, BottomH3, CardContainer, CardImageContainer, CardImg, CardLink, Container, Content, ContentBottom, ContentTop, ContentTopH3, ContentTopH6, CouponCode, HeartEffect, HeartIcon, Like, OfferDescription, Rating, SideEffect, Star } from './styled';
-
-const BoxOffer = () => {
-	
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import {
+	BottomDel,
+	BottomH3,
+	CardContainer,
+	CardImageContainer,
+	CardImg,
+	CardLink,
+	Container,
+	Content,
+	ContentBottom,
+	ContentTop,
+	ContentTopH3,
+	ContentTopH6,
+	CouponCode,
+	HeartEffect,
+	HeartIcon,
+	Like,
+	OfferDescription,
+	SideEffect
+} from './styled';
+import Rating from '../../Rating';
+const BoxOffer = ({
+	title,
+	subtitle,
+	description,
+	price,
+	beforePrice,
+	couponCode,
+	rating = 1,
+	image,
+	onClick,
+}) => {
+	const handleClick = (e) => {
+		e.preventDefault();
+		onClick();
+	};
 	return (
 		<Container>
 			<CardContainer>
 				<CardImageContainer>
-					<CardLink href="#" tabIndex="0">
-						<CardImg src="http://placekitten.com/230/230" alt="" />
+					<CardLink onClick={handleClick} tabIndex="0">
+						<CardImg src={image} alt="" />
 					</CardLink>
 					<SideEffect className="side-effect"></SideEffect>
 				</CardImageContainer>
 				<Content>
 					<div>
 						<ContentTop>
-							<a href="#" tabIndex="0">
-								<ContentTopH3>10% cashback</ContentTopH3>
+							<a href="#" tabIndex="0" onClick={handleClick}>
+								<ContentTopH3>{title}</ContentTopH3>
 							</a>
-							<ContentTopH6>HDFC bank</ContentTopH6>
+							<ContentTopH6>{subtitle}</ContentTopH6>
 							<Like className="like-cls">
 								<HeartIcon>
 									<FontAwesomeIcon icon={faHeart}>
@@ -28,35 +60,18 @@ const BoxOffer = () => {
 								</HeartIcon>
 							</Like>
 						</ContentTop>
-						<Rating className="rating">
-							<Star>
-								<FontAwesomeIcon beat icon={faStar} />
-							</Star>
-							<Star>
-								<FontAwesomeIcon beat icon={faStar} />
-							</Star>
-							<Star>
-								<FontAwesomeIcon beat icon={faStar} />
-							</Star>
-							<Star>
-								<FontAwesomeIcon icon={faStar} />
-							</Star>
-							<Star>
-								<FontAwesomeIcon icon={faStar} />
-							</Star>
-						</Rating>
-						<OfferDescription>
-							Lorem Ipsum is simply dummy text of the printing and setting industry. Lorem Ipsum has
-							been the industry's ard dummy text ever since the 1500s, when an unkn....
-						</OfferDescription>
+						<Rating stars={rating} />
+						<OfferDescription>{description}</OfferDescription>
 						<ContentBottom className="bottom">
 							<BottomH3>
-								<BottomDel>$240</BottomDel>
-								$200
+								{beforePrice && <BottomDel>{beforePrice}</BottomDel>}
+								{price}
 							</BottomH3>
-							<CouponCode className="coupon-code">
-								Coupon code: <span>EDR45</span>
-							</CouponCode>
+							{couponCode && (
+								<CouponCode className="coupon-code">
+									Coupon: <span>{couponCode}</span>
+								</CouponCode>
+							)}
 						</ContentBottom>
 					</div>
 				</Content>
