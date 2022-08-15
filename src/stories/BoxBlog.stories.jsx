@@ -7,9 +7,9 @@ export default {
 	title: 'Box/BoxBlog',
 	component: BoxBlog,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-	/*  argTypes: {
-    backgroundColor: { control: "color" },
-  }, */
+	argTypes: {
+		onClickReadMore: { action: 'onClickReadMore' },
+	},
 };
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
@@ -24,4 +24,8 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = {
+	image: 'http://placekitten.com/300/370',
+	text: 'Lorem impum calel is a pom bubblegum crisis',
+	description: 'This is a description',
+};
