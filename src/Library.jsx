@@ -23,6 +23,9 @@ import { Title } from './Typography';
 import PageContainer from './PageContainer';
 import SinglePage from './SinglePage';
 import AnimatedContainer from './AnimatedContainer';
+import Paginator from './Paginator';
+import BoxBlog from './Boxs/BoxBlog';
+import BoxOffer from './Boxs/BoxOffer';
 export {
 	ScrollToTop,
 	Step,
@@ -50,4 +53,7 @@ export {
 	PageContainer,
 	SinglePage,
 	AnimatedContainer,
+	Paginator,
+	BoxBlog,
+	BoxOffer,
 };
