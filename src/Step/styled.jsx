@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const StepsContainer = styled.div`
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -11,4 +13,4 @@ const StepsContainer = styled.div`
 	}};
 	width: 100%;
 `;
-export {StepsContainer, items}
+export { StepsContainer };
