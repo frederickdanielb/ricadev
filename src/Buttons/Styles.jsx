@@ -15,7 +15,7 @@ export const Solid = styled.button`
 			: '#000';
 	}};
 	color: white;
-	padding: 9px 20px;
+	padding: 9px 10px;
 	box-shadow: 1px 11px 20px 0px rgba(239, 63, 62, 0.12);
 	border: 1px solid
 		${(props) => {
@@ -64,7 +64,7 @@ export const Outline = styled.button`
 			? props.theme.colors.primary
 			: '#000';
 	}};
-	padding: 9px 20px;
+	padding: 9px 10px ;
 	box-shadow: 1px 11px 20px 0px rgba(239, 63, 62, 0.12);
 	border: 1px solid
 		${(props) => {
@@ -118,7 +118,7 @@ export const Rounded = styled.button`
 	font-weight: 700;
 	text-decoration: none;
 	transition: 0.3s ease-in-out;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	margin-bottom: 20px;
 	display: inline-block;
 	text-align: center;
