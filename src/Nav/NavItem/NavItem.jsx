@@ -1,7 +1,7 @@
-import styledComponent from 'styled-components';
+import styled from 'styled-components';
 
 const NavItem = ({ onClick, children }) => {
-	const TextContainer = styledComponent.button`
+	const TextContainer = styled.button`
     font-family: Nunito, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
