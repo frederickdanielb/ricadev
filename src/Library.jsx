@@ -26,6 +26,7 @@ import AnimatedContainer from './AnimatedContainer';
 import Paginator from './Paginator';
 import BoxBlog from './Boxs/BoxBlog';
 import BoxOffer from './Boxs/BoxOffer';
+import Rating from './Rating';
 export {
 	ScrollToTop,
 	Step,
@@ -56,4 +57,5 @@ export {
 	Paginator,
 	BoxBlog,
 	BoxOffer,
+	Rating,
 };
