@@ -54,7 +54,7 @@ const BoxOffer = ({
 							<ContentTopH6>{subtitle}</ContentTopH6>
 							<Like className="like-cls">
 								<HeartIcon>
-									<FontAwesomeIcon icon={faHeart}>
+									<FontAwesomeIcon beat icon={faHeart}>
 										<HeartEffect></HeartEffect>
 									</FontAwesomeIcon>
 								</HeartIcon>
