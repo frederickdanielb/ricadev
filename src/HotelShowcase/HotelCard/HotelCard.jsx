@@ -1,4 +1,5 @@
 import { decode } from 'he';
+import errorImage from '../../../images/No_image_available.svg';
 /* import { Rate } from "rsuite";
  */ import './card.scss';
 import { Button } from 'react-bootstrap';
@@ -12,8 +13,8 @@ const HotelCard = ({ index, hotel, onSelectHotel, className }) => {
 			<div className="special-box CardHotel">
 				<div className="special-img">
 					<img
-						onError={(evt) => (evt.target.src = '/images/hotel/gallery/2.jpg')}
-						src={hotel.images.length > 0 ? hotel.images[0].image : '/images/hotel/gallery/2.jpg'}
+						onError={(evt) => (evt.target.src = errorImage)}
+						src={hotel.images.length > 0 ? hotel.images[0].image : errorImage}
 						className="img-fluid lazyload bg-img CardHotel__Image"
 						alt=""
 					/>
