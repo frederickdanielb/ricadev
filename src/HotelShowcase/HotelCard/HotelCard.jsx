@@ -15,7 +15,7 @@ const HotelCard = ({ index, hotel, onSelectHotel, className }) => {
 					<img
 						onError={(evt) => (evt.target.src = errorImage)}
 						src={hotel.images.length > 0 ? hotel.images[0].image : errorImage}
-						className="img-fluid lazyload bg-img CardHotel__Image"
+						className="lazyload bg-img CardHotel__Image"
 						alt=""
 					/>
 				</div>
