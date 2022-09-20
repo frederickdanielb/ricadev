@@ -7,13 +7,17 @@ import {
 	Logo,
 	NavContainer,
 	NavHeader,
-	NavItem,
+	NavItemInternal,
 	NavItems,
 	NavLogo,
 	SubNavContainer,
 	UserIcon,
 	UserItem,
 } from './styled';
+import Dropdown from 'react-bootstrap/Dropdown';
+
+import { NavDropdown } from 'react-bootstrap';
+import { default as Navboot } from 'react-bootstrap/Nav';
 const Nav = ({
 	logo,
 	isLoggedIn,
@@ -23,6 +27,7 @@ const Nav = ({
 	onClickLoginButton,
 	onClickLogoutButton,
 	children,
+	rightChildren,
 }) => {
 	const _loginButtonText = 'Login';
 	const _logoutButtonText = 'Logout';
@@ -33,23 +38,33 @@ const Nav = ({
 				<NavHeader>
 					<NavLogo>
 						{logo && (
-							<NavItem>
+							<NavItemInternal>
 								<Logo src={logo} />
-							</NavItem>
+							</NavItemInternal>
 						)}
 					</NavLogo>
 					<NavItems>
-						{userDisplayName && (
-							<UserItem>
-								<NavItem>
+						{userDisplayName && isLoggedIn && (
+							<Dropdown>
+								<Dropdown.Toggle variant="secondary" id="dropdown-basic">
 									<UserIcon>
 										<FontAwesomeIcon icon={faUser} />
 									</UserIcon>
 									{userDisplayName}
-								</NavItem>
-							</UserItem>
+								</Dropdown.Toggle>
+
+								<Dropdown.Menu>
+									<Dropdown.Item href="/admin">Administrar</Dropdown.Item>
+									<Dropdown.Item onClick={onClickLogoutButton}>
+										<UserIcon>
+											<FontAwesomeIcon icon={faTimes} />
+										</UserIcon>
+										{logoutButtonText ? logoutButtonText : _logoutButtonText}
+									</Dropdown.Item>
+								</Dropdown.Menu>
+							</Dropdown>
 						)}
-						<NavItem>
+						<NavItemInternal>
 							{!isLoggedIn && (
 								<LoginButton onClick={onClickLoginButton}>
 									<ButtonSolid secondary rounded>
@@ -57,17 +72,8 @@ const Nav = ({
 									</ButtonSolid>
 								</LoginButton>
 							)}
-							{isLoggedIn && (
-								<LoginButton onClick={onClickLogoutButton}>
-									<ButtonSolid secondary rounded>
-										<UserIcon>
-											<FontAwesomeIcon icon={faTimes} />
-										</UserIcon>{' '}
-										{logoutButtonText ? logoutButtonText : _logoutButtonText}
-									</ButtonSolid>
-								</LoginButton>
-							)}
-						</NavItem>
+						</NavItemInternal>
+						{rightChildren}
 					</NavItems>
 				</NavHeader>
 			</NavContainer>

@@ -14,7 +14,7 @@ const SubNavContainer = styled.div`
 	justify-content: end;
 `;
 const NavHeader = styled.div`
-	height: 60px;
+	height: 55px;
 	padding-left: 40px;
 	padding-right: 40px;
 	background-color: ${(props) => {
@@ -24,7 +24,7 @@ const NavHeader = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	border-radius: 0 0 2.5rem 2.5rem;
+	border-radius: 0 0 1rem 1rem;
 	box-shadow: 0 0.5rem 1rem #00000026;
 `;
 const NavItems = styled.div`
@@ -32,7 +32,7 @@ const NavItems = styled.div`
 	flex-wrap: wrap;
 	justify-content: end;
 `;
-const NavItem = styled.div`
+const NavItemInternal = styled.div`
 	align-self: center;
 	color: #ffffff;
 	margin-left: 15px;
@@ -56,7 +56,7 @@ const LoginButton = styled.button`
 	}
 `;
 const Logo = styled.img`
-	height: 55px;
+	height: 35px;
 `;
 const UserIcon = styled.div`
 	display: inline;
@@ -70,7 +70,7 @@ export {
 	LoginButton,
 	NavLogo,
 	UserItem,
-	NavItem,
+	NavItemInternal,
 	NavItems,
 	NavHeader,
 	SubNavContainer,

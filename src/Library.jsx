@@ -27,6 +27,7 @@ import Paginator from './Paginator';
 import BoxBlog from './Boxs/BoxBlog';
 import BoxOffer from './Boxs/BoxOffer';
 import Rating from './Rating';
+import { NavItemInternal } from './Nav/styled';
 export {
 	ScrollToTop,
 	Step,
@@ -47,6 +48,7 @@ export {
 	WhereWeAre,
 	Nav,
 	NavItem,
+	NavItemInternal,
 	ContactBox,
 	ThemeProvider,
 	useTheme,
