@@ -12,12 +12,9 @@ import {
 	NavLogo,
 	SubNavContainer,
 	UserIcon,
-	UserItem,
 } from './styled';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-import { NavDropdown } from 'react-bootstrap';
-import { default as Navboot } from 'react-bootstrap/Nav';
 const Nav = ({
 	logo,
 	isLoggedIn,

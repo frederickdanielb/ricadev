@@ -4,6 +4,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { base, rica, panam } from '../Config/themes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css';
+
 const themesMap = {
 	rica,
 	panam,
@@ -13,7 +14,6 @@ export const ThemePreferenceContext = React.createContext();
 const ThemeProvider = ({ theme = null, children }) => {
 	const [currentTheme, setCurrentTheme] = useState('rica');
 	const selectedTheme = { ...base, colors: themesMap[theme ? theme : currentTheme] };
-	console.log(theme, selectedTheme);
 	return (
 		<ThemePreferenceContext.Provider value={{ currentTheme, setCurrentTheme }}>
 			<link

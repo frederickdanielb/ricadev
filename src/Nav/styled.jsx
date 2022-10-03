@@ -45,7 +45,7 @@ const UserItem = styled.div`
 const NavLogo = styled.div`
 	justify-content: start;
 `;
-const LoginButton = styled.button`
+const LoginButton = styled.div`
 	background: none;
 	border: none;
 	cursor: pointer;

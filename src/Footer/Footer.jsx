@@ -16,5 +16,5 @@ const Footer = ({ children }) => {
 export default Footer;
 
 Footer.propTypes = {
-	children: PropTypes.any.isRequired,
+	children: PropTypes.any,
 };
