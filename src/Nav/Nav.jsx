@@ -63,8 +63,8 @@ const Nav = ({
 						)}
 						<NavItemInternal>
 							{!isLoggedIn && (
-								<LoginButton onClick={onClickLoginButton}>
-									<ButtonSolid secondary rounded>
+								<LoginButton>
+									<ButtonSolid secondary rounded onClick={onClickLoginButton}>
 										{loginButtonText ? loginButtonText : _loginButtonText}
 									</ButtonSolid>
 								</LoginButton>
