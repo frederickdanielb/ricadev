@@ -31,6 +31,6 @@ const Topics = ({ topics }) => {
 };
 
 Topics.propTypes = {
-	topics: PropTypes.object.isRequired,
+	topics: PropTypes.object,
 };
 export default Topics;
