@@ -28,6 +28,7 @@ import BoxBlog from './Boxs/BoxBlog';
 import BoxOffer from './Boxs/BoxOffer';
 import Rating from './Rating';
 import { NavItemInternal } from './Nav/styled';
+import BookingFailed from './BookingFailed';
 export {
 	ScrollToTop,
 	Step,
@@ -60,4 +61,5 @@ export {
 	BoxBlog,
 	BoxOffer,
 	Rating,
+	BookingFailed,
 };
