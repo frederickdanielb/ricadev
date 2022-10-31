@@ -17,6 +17,7 @@ const StepsContainer = styled.div`
 const StepItemBox = styled.ul`
 	text-align: center;
 	display: flex;
+	padding-left: 0px;
 `;
 const StepItemContainer = styled.li`
 	display: inline-block;
