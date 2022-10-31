@@ -1,9 +1,9 @@
-import StepItem from './StepItem';
+import StepLineItem from './StepLineItem';
 import PropTypes from 'prop-types';
-import { mapCloneElement } from '../utils/Children';
+import { mapCloneElement } from '../../utils/Children';
 import './Step.scss';
 import { StepsContainer } from './styled';
-const Step = ({ children, current, onClick = () => {}, linkeable }) => {
+const StepLine = ({ children, current, onClick = () => {}, linkeable }) => {
 	const items = mapCloneElement(children, (item, index) => {
 		const itemProps = {
 			index: index,
@@ -22,12 +22,12 @@ const Step = ({ children, current, onClick = () => {}, linkeable }) => {
 		</StepsContainer>
 	);
 };
-Step.Item = StepItem;
-Step.propTypes = {
-	/** Step.Item components stored as child of the Step component */
+StepLine.Item = StepLineItem;
+StepLine.propTypes = {
+	/** StepLine.Item components stored as child of the StepLine component */
 	children: PropTypes.arrayOf(
 		PropTypes.shape({
-			type: PropTypes.oneOf([Step.Item]),
+			type: PropTypes.oneOf([StepLine.Item]),
 		}),
 	),
 	/** Current step */
@@ -35,4 +35,4 @@ Step.propTypes = {
 	/** Function to be called when a step is clicked */
 	onClick: PropTypes.func,
 };
-export default Step;
+export default StepLine;

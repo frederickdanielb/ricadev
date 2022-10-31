@@ -2,15 +2,18 @@ import React from 'react';
 import ThemeProvider from '../Context/ThemeProvider';
 import Header from '../Header';
 import SinglePage from '../SinglePage';
-import Step from '../Step';
+import StepLine from '../Step/Line';
 import Nav from '../Nav';
 import NavItem from '../Nav/NavItem';
 import AnimatedContainer from '../AnimatedContainer';
 import mockConfig from './__mocks__/config.mock';
 import { Default as FooterStories } from './Footer.stories';
+import { Step } from '../Library';
+import TemplateSelector from './helpers/TemplateSelector';
 const BasePage = ({ theme, children }) => {
 	return (
 		<ThemeProvider theme={theme}>
+			<TemplateSelector />
 			<SinglePage>{children}</SinglePage>
 		</ThemeProvider>
 	);
@@ -43,11 +46,43 @@ Default.args = {
 					{ node: 'Contact', onClick: () => console.log('contact clicked') },
 				]}
 			></Header>
-			<Step linkeable current={1}>
-				<Step.Item title={'data item'} />
-				<Step.Item title={'data item2'} />
-				<Step.Item title={'data item3'} />
-			</Step>
+			<StepLine linkeable current={1}>
+				<StepLine.Item title={'data item'} />
+				<StepLine.Item title={'data item2'} />
+				<StepLine.Item title={'data item3'} />
+			</StepLine>
+			<FooterStories {...FooterStories.args} />
+		</>
+	),
+};
+
+export const DefaultStepAlternative = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DefaultStepAlternative.args = {
+	children: (
+		<>
+			<Header
+				logo={mockConfig.page.logo_url}
+				loggedUserName={'Test User'}
+				loggedIn
+				menuItems={[
+					{ node: 'Home', onClick: () => console.log('home clicked') },
+					{ node: 'About', onClick: () => console.log('about clicked') },
+					{ node: 'Contact', onClick: () => console.log('contact clicked') },
+				]}
+			></Header>
+			<Step
+				type={'square'}
+				items={[
+					{ title: 'data item' },
+					{ title: 'data item2' },
+					{ title: 'data item3' },
+					{ title: 'data item4' },
+					{ title: 'data item5' },
+				]}
+				linkeable
+				current={4}
+			></Step>
 			<FooterStories {...FooterStories.args} />
 		</>
 	),
@@ -73,12 +108,12 @@ WithNav.args = {
 				<NavItem>{'Contact'}</NavItem>
 			</Nav>
 			<SinglePage>
-				<Step linkeable current={1}>
-					<Step.Item title={'data item'} />
-					<Step.Item title={'data item2'} />
-					<Step.Item title={'data item3'} />
-					<Step.Item title={'data item4'} />
-				</Step>
+				<StepLine linkeable current={1}>
+					<StepLine.Item title={'data item'} />
+					<StepLine.Item title={'data item2'} />
+					<StepLine.Item title={'data item3'} />
+					<StepLine.Item title={'data item4'} />
+				</StepLine>
 			</SinglePage>
 			<FooterStories {...FooterStories.args} />
 		</>
@@ -106,12 +141,12 @@ WithAnimatedContainer.args = {
 				<NavItem>{'Contact'}</NavItem>
 			</Nav>
 			<AnimatedContainer>
-				<Step linkeable current={1}>
-					<Step.Item title={'data item'} />
-					<Step.Item title={'data item2'} />
-					<Step.Item title={'data item3'} />
-					<Step.Item title={'data item4'} />
-				</Step>
+				<StepLine linkeable current={1}>
+					<StepLine.Item title={'data item'} />
+					<StepLine.Item title={'data item2'} />
+					<StepLine.Item title={'data item3'} />
+					<StepLine.Item title={'data item4'} />
+				</StepLine>
 			</AnimatedContainer>
 			<FooterStories {...FooterStories.args} />
 		</>
