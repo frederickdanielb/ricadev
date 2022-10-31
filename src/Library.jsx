@@ -26,6 +26,7 @@ import AnimatedContainer from './AnimatedContainer';
 import Paginator from './Paginator';
 import BoxBlog from './Boxs/BoxBlog';
 import BoxOffer from './Boxs/BoxOffer';
+import BoxSimple from './Boxs/BoxSimple';
 import Rating from './Rating';
 import { NavItemInternal } from './Nav/styled';
 export {
@@ -59,5 +60,6 @@ export {
 	Paginator,
 	BoxBlog,
 	BoxOffer,
+	BoxSimple,
 	Rating,
 };
