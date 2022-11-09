@@ -31,10 +31,5 @@ const StepItemContainer = styled.li`
 	background-color: ${(props) => {
 		return props.isCompleted ? props.theme.colors.secondary : props.theme.colors.primary;
 	}};
-	/*	opacity: ${(props) => (props.isCompleted ? 0.7 : 1)};*/
-	${(props) =>
-		props.isCompleted
-			? 'box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,\n		rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,\n		rgba(0, 0, 0, 0.09) 0px -3px 5px;'
-			: null}
 `;
 export { StepsContainer, StepItemContainer, StepItemBox };
