@@ -25,7 +25,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 					</div>
 					<div className="special-content">
 						<a href="tour-single-6.html">
-							<h5>Bali Dreams Land Only<span>(6N 7D)</span></h5>
+							<h5>{_package.title}</h5>
 						</a>
 						<div className="tour-detail">
 

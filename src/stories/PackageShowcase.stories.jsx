@@ -2,6 +2,7 @@ import React from 'react';
 import PackageCard from '../PackageShowcase/PackageCard';
 import { mockHotels } from './__mocks__/hotels.mock';
 import PackageShowcase from '../PackageShowcase';
+import { mockPackages } from './__mocks__/packages.mock';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: 'Page/PackageShowcase',
@@ -18,8 +19,8 @@ export default {
 };
 const Template = (args) => (
 	<PackageShowcase {...args}>
-		{mockHotels.map((hotel, index) => (
-			<PackageCard  _package={hotel} index={index} onSelectPackage={() => {}} />
+		{mockPackages.map((_package, index) => (
+			<PackageCard  _package={_package} index={index} onSelectPackage={() => {}} />
 		))}
 	</PackageShowcase>
 );
