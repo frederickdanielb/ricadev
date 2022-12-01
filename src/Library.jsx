@@ -5,6 +5,8 @@ import Header from './Header';
 import ButtonTop from './ButtonTop';
 import HotelShowcase from './HotelShowcase';
 import HotelCard from './HotelShowcase/HotelCard';
+import PackageShowcase from './PackageShowcase';
+import PackageCard from './PackageShowcase/PackageCard';
 import Footer from './Footer';
 import ContactUs from './Footer/ContactUs';
 import LeftLinks from './Footer/LeftLinks';
@@ -40,6 +42,8 @@ export {
 	ButtonTop,
 	HotelShowcase,
 	HotelCard,
+	PackageShowcase,
+	PackageCard,
 	Footer,
 	ContactUs,
 	LeftLinks,

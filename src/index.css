@@ -5415,7 +5415,7 @@ section .black-layer:before {
 	margin-top: 4px;
 	text-transform: capitalize;
 	color: rgba(0, 0, 0, 0.78);
-	max-width: 360px;
+	/*max-width: 360px;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
