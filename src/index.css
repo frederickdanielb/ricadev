@@ -5221,7 +5221,7 @@ section .black-layer:before {
 	line-height: 1.5;
 	margin-bottom: 15px;
 	margin-top: -7px;
-	white-space: nowrap;
+	white-space: break-spaces;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -5300,7 +5300,7 @@ section .black-layer:before {
 	display: flex;
 	overflow: hidden;
 	max-width: 280px;
-	white-space: nowrap;
+	white-space: break-spaces;
 	text-overflow: ellipsis;
 	display: block;
 }
@@ -5415,7 +5415,7 @@ section .black-layer:before {
 	margin-top: 4px;
 	text-transform: capitalize;
 	color: rgba(0, 0, 0, 0.78);
-	max-width: 360px;
+	/*max-width: 360px;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
