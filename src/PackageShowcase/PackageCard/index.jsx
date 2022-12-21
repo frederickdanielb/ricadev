@@ -8,26 +8,63 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaneArrival, faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 import { IncludeList, IncludeListItem } from './styled';
 
-const PackageCard = ({ index, _package, onSelectPackage, className }) => {
+const PackageCard = ({ index, _package, onSelectPackage, recommended, className }) => {
 	const handleClickPackage = () => {
 		if (onSelectPackage) onSelectPackage(index, _package);
+	};
+	const getDepartureDate = (itinerary) => {
+		const dep = itinerary.includes('Salida');
+		const start = itinerary.indexOf('Salida ') + (dep ? 7 : 8);
+		const end = itinerary.indexOf(' vuelo ');
+		return itinerary.substring(start, end);
+	};
+	const getFlight = (itinerary) => {
+		const start = itinerary.indexOf(' vuelo ') + 7;
+		const end = itinerary.indexOf(' Sale ');
+		return itinerary.substring(start, end);
+	};
+	const getDeparture = (itinerary) => {
+		const start = itinerary.indexOf(' Sale ') + 6;
+		const end = itinerary.indexOf(' Llega ');
+		return itinerary.substring(start, end);
+	};
+	const getArrival = (itinerary) => {
+		const start = itinerary.indexOf(' Llega ') + 7;
+		const end = itinerary.length;
+		return itinerary.substring(start, end);
 	};
 
 	const getFlightItinerary = () => {
 		const _itinerary = _package.itineravlo
-			.split('<br />\n')
-			.filter((item) => item !== '')
-			.map((item) => (
-				<p className="d-inline">
-					<i>
-						<FontAwesomeIcon
-							icon={item.includes('Salida') ? faPlaneDeparture : faPlaneArrival}
-							className={'mr-3'}
-						/>
-					</i>
-					<p className={'ml-3'}>{item}</p>
-				</p>
-			));
+			? _package.itineravlo
+					.split('<br />\n')
+					.filter((item) => item !== '')
+					.map((item) => (
+						<>
+							<p className="d-inline">
+								<i>
+									<FontAwesomeIcon
+										icon={item.includes('Salida') ? faPlaneDeparture : faPlaneArrival}
+										className={'mr-3'}
+									/>
+								</i>
+								<span style={{ marginLeft: '10px' }}>{getDepartureDate(item)}</span>
+							</p>
+							<ul>
+								<li>
+									Vuelo : <p className={'ml-3'}>{getFlight(item)}</p>
+								</li>
+								<br />
+								<li>
+									Tiempo Vuelo:
+									<p className="ml-3">
+										{getDeparture(item)} - {getArrival(item)}{' '}
+									</p>
+								</li>
+							</ul>
+						</>
+					))
+			: [];
 		return _itinerary;
 	};
 
@@ -35,13 +72,15 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 		return (
 			<IncludeList>
 				{_package.coverage
-					.filter((item) => item !== '')
-					.map((coverage) => (
-						<>
-							<IncludeListItem>{coverage}</IncludeListItem>
-							<br />
-						</>
-					))}
+					? _package.coverage
+							.filter((item) => item !== '')
+							.map((coverage) => (
+								<>
+									<IncludeListItem>{coverage}</IncludeListItem>
+									<br />
+								</>
+							))
+					: []}
 			</IncludeList>
 		);
 	};
@@ -54,9 +93,9 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 			<div className="special-box p-0">
 				<div className="special-img">
 					<a href="tour-single-6.html">
-						<img src="http://placekitten.com/1280/720" className="img-fluid bg-img" alt="" />
+						<img src={_package.image} className="img-fluid bg-img" alt="" />
 					</a>
-					<div className="top-icon">
+					{/*<div className="top-icon">
 						<a
 							href="#"
 							className=""
@@ -67,7 +106,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 						>
 							<i className="far fa-heart"></i>
 						</a>
-					</div>
+					</div>*/}
 				</div>
 				<div className="special-content">
 					<h5>{_package.title}</h5>
@@ -77,7 +116,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 						<div className="include-sec">
 							<span>Incluye</span>
 							<ul className="include">
-								<li>
+								<li className={_package.amenities.hotel ? '' : 'not-include'}>
 									<img
 										src={iconHotel}
 										className="img-fluid"
@@ -87,7 +126,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 										title="Hotel"
 									/>
 								</li>
-								<li>
+								<li className={_package.amenities.flight ? '' : 'not-include'}>
 									<img
 										src={iconAirplane}
 										className="img-fluid"
@@ -97,7 +136,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 										title="Flight"
 									/>
 								</li>
-								<li>
+								<li className={_package.amenities.food_plan_all ? '' : 'not-include'}>
 									<img
 										src={iconFork}
 										className="img-fluid"
@@ -107,7 +146,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 										title="Meals"
 									/>
 								</li>
-								<li className={false ? 'not-include' : ''}>
+								<li className={_package.amenities.excursion ? '' : 'not-include'}>
 									<img
 										src={iconPhotoCamera}
 										className="img-fluid"
@@ -117,14 +156,14 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 										title="Sightseeing"
 									/>
 								</li>
-								<li className={false ? 'not-include' : ''}>
+								<li className={_package.amenities.insurance ? '' : 'not-include'}>
 									<img
 										src={iconVisa}
 										className="img-fluid"
 										alt=""
 										data-toggle="tooltip"
 										data-placement="top"
-										title="Visa"
+										title="Seguro"
 									/>
 								</li>
 							</ul>
@@ -144,7 +183,7 @@ const PackageCard = ({ index, _package, onSelectPackage, className }) => {
 						</div>
 					</div>
 				</div>
-				<div className="label-offer">Recommended</div>
+				{recommended && <div className="label-offer">Recomendado</div>}
 			</div>
 		</div>
 	);
