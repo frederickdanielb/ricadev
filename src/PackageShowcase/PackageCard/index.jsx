@@ -6,7 +6,7 @@ import iconFork from '../../../images/icon/tour/fork.png';
 import iconPhotoCamera from '../../../images/icon/tour/photo-camera.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaneArrival, faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
-import { IncludeList, IncludeListItem } from './styled';
+import { DimensionedImage, IncludeList, IncludeListItem } from './styled';
 
 const PackageCard = ({ index, _package, onSelectPackage, recommended, className }) => {
 	const handleClickPackage = () => {
@@ -93,7 +93,7 @@ const PackageCard = ({ index, _package, onSelectPackage, recommended, className 
 			<div className="special-box p-0">
 				<div className="special-img">
 					<a href="tour-single-6.html">
-						<img src={_package.image} className="img-fluid bg-img" alt="" />
+						<DimensionedImage src={_package.image} className="img-fluid bg-img" alt="" />
 					</a>
 					{/*<div className="top-icon">
 						<a

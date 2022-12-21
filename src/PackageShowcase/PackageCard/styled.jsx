@@ -16,3 +16,6 @@ export const IncludeListItem = styled.li`
 		transform: rotate(45deg);
 	}
 `;
+export const DimensionedImage = styled.img`
+	aspect-ratio: 9/3;
+`;
