@@ -1,11 +1,15 @@
 import './card.scss';
-import iconVisa from '../../../images/icon/tour/visa.png';
-import iconAirplane from '../../../images/icon/tour/airplane.png';
-import iconHotel from '../../../images/icon/tour/hotel.png';
-import iconFork from '../../../images/icon/tour/fork.png';
-import iconPhotoCamera from '../../../images/icon/tour/photo-camera.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlaneArrival, faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
+import {
+	faBowlFood,
+	faHotel,
+	faMapLocation,
+	faMedkit,
+	faPlane,
+	faPlaneArrival,
+	faPlaneDeparture,
+	faBus,
+} from '@fortawesome/free-solid-svg-icons';
 import { DimensionedImage, IncludeList, IncludeListItem } from './styled';
 
 const PackageCard = ({ index, _package, onSelectPackage, recommended, className }) => {
@@ -58,7 +62,7 @@ const PackageCard = ({ index, _package, onSelectPackage, recommended, className 
 								<li>
 									Tiempo Vuelo:
 									<p className="ml-3">
-										{getDeparture(item)} - {getArrival(item)}{' '}
+										{getDeparture(item)} - {getArrival(item)}
 									</p>
 								</li>
 							</ul>
@@ -92,9 +96,13 @@ const PackageCard = ({ index, _package, onSelectPackage, recommended, className 
 		>
 			<div className="special-box p-0">
 				<div className="special-img">
-					<a href="tour-single-6.html">
-						<DimensionedImage src={_package.image} className="img-fluid bg-img" alt="" />
-					</a>
+					<DimensionedImage
+						src={_package.image}
+						onClick={handleClickPackage}
+						className="img-fluid bg-img"
+						alt=""
+					/>
+
 					{/*<div className="top-icon">
 						<a
 							href="#"
@@ -117,54 +125,42 @@ const PackageCard = ({ index, _package, onSelectPackage, recommended, className 
 							<span>Incluye</span>
 							<ul className="include">
 								<li className={_package.amenities.hotel ? '' : 'not-include'}>
-									<img
-										src={iconHotel}
-										className="img-fluid"
-										alt=""
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Hotel"
-									/>
+									<i>
+										<FontAwesomeIcon icon={faHotel} size={'2x'} title={'Hotel'}></FontAwesomeIcon>
+									</i>
 								</li>
 								<li className={_package.amenities.flight ? '' : 'not-include'}>
-									<img
-										src={iconAirplane}
-										className="img-fluid"
-										alt=""
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Flight"
-									/>
+									<i>
+										<FontAwesomeIcon icon={faPlane} size={'2x'} title={'Vuelo'}></FontAwesomeIcon>
+									</i>
 								</li>
 								<li className={_package.amenities.food_plan_all ? '' : 'not-include'}>
-									<img
-										src={iconFork}
-										className="img-fluid"
-										alt=""
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Meals"
-									/>
+									<i>
+										<FontAwesomeIcon
+											icon={faBowlFood}
+											size={'2x'}
+											title={'Alimentación'}
+										></FontAwesomeIcon>
+									</i>
 								</li>
 								<li className={_package.amenities.excursion ? '' : 'not-include'}>
-									<img
-										src={iconPhotoCamera}
-										className="img-fluid"
-										alt=""
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Sightseeing"
-									/>
+									<i>
+										<FontAwesomeIcon
+											icon={faMapLocation}
+											size={'2x'}
+											title={'Turismo'}
+										></FontAwesomeIcon>
+									</i>
+								</li>
+								<li className={_package.amenities.transfer ? '' : 'not-include'}>
+									<i>
+										<FontAwesomeIcon icon={faBus} size={'2x'} title={'Transfer'}></FontAwesomeIcon>
+									</i>
 								</li>
 								<li className={_package.amenities.insurance ? '' : 'not-include'}>
-									<img
-										src={iconVisa}
-										className="img-fluid"
-										alt=""
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Seguro"
-									/>
+									<i>
+										<FontAwesomeIcon icon={faMedkit} size={'2x'} title={'Seguro'}></FontAwesomeIcon>
+									</i>
 								</li>
 							</ul>
 						</div>
