@@ -11,6 +11,7 @@ import {
 	faBus,
 } from '@fortawesome/free-solid-svg-icons';
 import { DimensionedImage, IncludeList, IncludeListItem } from './styled';
+import PackageIncludes from './PackageIncludes';
 
 const PackageCard = ({ index, _package, onSelectPackage, recommended, className }) => {
 	const handleClickPackage = () => {
@@ -121,49 +122,9 @@ const PackageCard = ({ index, _package, onSelectPackage, recommended, className 
 
 					<div className="tour-detail">
 						{getFlightItinerary()}
-						<div className="include-sec">
-							<span>Incluye</span>
-							<ul className="include">
-								<li className={_package.amenities.hotel ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon icon={faHotel} size={'2x'} title={'Hotel'}></FontAwesomeIcon>
-									</i>
-								</li>
-								<li className={_package.amenities.flight ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon icon={faPlane} size={'2x'} title={'Vuelo'}></FontAwesomeIcon>
-									</i>
-								</li>
-								<li className={_package.amenities.food_plan_all ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon
-											icon={faBowlFood}
-											size={'2x'}
-											title={'Alimentación'}
-										></FontAwesomeIcon>
-									</i>
-								</li>
-								<li className={_package.amenities.excursion ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon
-											icon={faMapLocation}
-											size={'2x'}
-											title={'Turismo'}
-										></FontAwesomeIcon>
-									</i>
-								</li>
-								<li className={_package.amenities.transfer ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon icon={faBus} size={'2x'} title={'Transfer'}></FontAwesomeIcon>
-									</i>
-								</li>
-								<li className={_package.amenities.insurance ? '' : 'not-include'}>
-									<i>
-										<FontAwesomeIcon icon={faMedkit} size={'2x'} title={'Seguro'}></FontAwesomeIcon>
-									</i>
-								</li>
-							</ul>
-						</div>
+
+							<PackageIncludes go-flight={_package.amenities.flight} foodPlanAll={_package.amenities.food_plan_all} hotel={_package.amenities.hotel} insurance={_package.amenities.insurance} transfer={_package.amenities.transfer} excursion={_package.amenities.excursion}  />
+
 						{getIncludes()}
 						<div className="bottom-section">
 							<div className="price">

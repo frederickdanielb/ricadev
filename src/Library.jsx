@@ -32,6 +32,7 @@ import BoxSimple from './Boxs/BoxSimple';
 import Rating from './Rating';
 import { NavItemInternal } from './Nav/styled';
 import BookingFailed from './BookingFailed';
+import PackageIncludes from './PackageShowcase/PackageCard/PackageIncludes'
 export {
 	ScrollToTop,
 	Step,
@@ -68,4 +69,5 @@ export {
 	BoxSimple,
 	Rating,
 	BookingFailed,
+	PackageIncludes
 };
