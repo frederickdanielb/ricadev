@@ -6,6 +6,7 @@ const ButtonSolid = ({
 	block,
 	rounded,
 	secondary,
+	error,
 	onClick,
 	disabled,
 	children,
@@ -19,6 +20,7 @@ const ButtonSolid = ({
 			secondary={secondary}
 			onClick={onClick}
 			disabled={disabled}
+			error={error}
 			{...restProps}
 		>
 			{children}

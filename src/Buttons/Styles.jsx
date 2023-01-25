@@ -12,6 +12,8 @@ export const Solid = styled.button`
 			? props.theme.colors.primary
 			: props.theme && props.secondary
 			? props.theme.colors.secondary
+			: props.theme && props.error
+			? props.theme.colors.error
 			: '#000';
 	}};
 	color: white;
@@ -23,6 +25,8 @@ export const Solid = styled.button`
 				? props.theme.colors.primary
 				: props.theme && props.secondary
 				? props.theme.colors.secondary
+				: props.theme && props.error
+				? props.theme.colors.error
 				: '#000';
 		}};
 	&:hover {
@@ -33,6 +37,8 @@ export const Solid = styled.button`
 				? props.theme.colors.primary
 				: props.theme && props.secondary
 				? props.theme.colors.secondary
+				: props.theme && props.error
+				? props.theme.colors.error
 				: '#000';
 		}};
 		box-shadow: 1px 11px 20px 0px rgba(239, 63, 62, 0.22);
@@ -64,7 +70,7 @@ export const Outline = styled.button`
 			? props.theme.colors.primary
 			: '#000';
 	}};
-	padding: 9px 10px ;
+	padding: 9px 10px;
 	box-shadow: 1px 11px 20px 0px rgba(239, 63, 62, 0.12);
 	border: 1px solid
 		${(props) => {

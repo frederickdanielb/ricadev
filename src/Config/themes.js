@@ -14,6 +14,7 @@ export const rica = {
 	secondary: '#000',
 	white: '#FFF',
 	default: '#000',
+	error: '#ef3f3e',
 };
 export const panam = {
 	background: 'rgb(102, 36, 130)',
@@ -21,4 +22,5 @@ export const panam = {
 	secondary: '#FF9314',
 	white: '#FFF',
 	default: '#000',
+	error: '#ef3f3e',
 };

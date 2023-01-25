@@ -3,6 +3,7 @@ import RoomBox from './RoomBox/RoomBox';
 import './RoomSelector.scss';
 import { ButtonSolid } from '../Buttons';
 import PropTypes from 'prop-types';
+import { SelectorContainer } from './styled';
 
 const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 	const defaultLimits = {
@@ -41,11 +42,11 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 		});
 		setRoomDescription(
 			rooms.distribution.length +
-			(rooms.distribution.length > 1 ? ' Habs.' : ' Hab.') +
-			' + ' +
-			adults +
-			' Adt.' +
-			(childs.length > 0 ? ' + ' + childs.length + ' Niños' : ''),
+				(rooms.distribution.length > 1 ? ' Habs.' : ' Hab.') +
+				' + ' +
+				adults +
+				' Adt.' +
+				(childs.length > 0 ? ' + ' + childs.length + ' Niños' : ''),
 		);
 		onChangeRooms(rooms);
 	};
@@ -110,62 +111,64 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 	}, [ref]);
 
 	useEffect(() => {
-		setBoxLimits(prev => ({ ...prev, ...limits }))
-	}, [limits])
+		setBoxLimits((prev) => ({ ...prev, ...limits }));
+	}, [limits]);
 
 	return (
-		<div className='rooms-section' ref={ref}>
+		<SelectorContainer ref={ref}>
 			<input
-				type='text'
-				className='form-control open-select'
+				type="text"
+				className="form-control open-select"
 				placeholder={roomDescription}
 				onFocus={show}
-				onChange={() => {
-				}}
+				onChange={() => {}}
 			/>
-			{showSelector || type == 'vertical' && <div className={'room_selector_Container ' + (showSelector || type == 'vertical' ? 'show roomSelector' : '')}>
-				<div className='room-cls mt-3 '>
-					{rooms &&
-						rooms.distribution.map((room, idx) => {
-							return (
-								<RoomBox
-									idx={idx}
-									room={room}
-									onUpdate={updateRoom}
-									onRemove={removeRoom}
-									key={'room-' + idx}
-									disableAddButton={disableAdditions}
-									limits={boxLimits}
-								/>
-							);
-						})}
-				</div>
-				<div className='row mt-3'>
-					<div className={'col-lg-12 col-md-12 col-xs-12 col-sm-12'}>
-						<ButtonSolid
-							block
-							secondary
-							disabled={rooms.length >= boxLimits.maxRooms || disableAdditions}
-							onClick={addRoom}
-						>
-							Agregar Habitación
-						</ButtonSolid>
+
+			{showSelector && (
+				<div className={'room_selector_Container ' + (showSelector ? 'show roomSelector' : '')}>
+					<div className="room-cls mt-3 ">
+						{rooms &&
+							rooms.distribution.map((room, idx) => {
+								return (
+									<RoomBox
+										idx={idx}
+										room={room}
+										onUpdate={updateRoom}
+										onRemove={removeRoom}
+										key={'room-' + idx}
+										disableAddButton={disableAdditions}
+										limits={boxLimits}
+									/>
+								);
+							})}
 					</div>
-					<div className={'col-lg-12 col-md-12 col-xs-12 col-sm-12 mt-1'}>
-						<ButtonSolid
-							block
-							secondary
-							onClick={() => {
-								apply();
-								hide();
-							}}
-						>
-							Aplicar
-						</ButtonSolid>
+					<div className="row mt-3">
+						<div className={'col-lg-12 col-md-12 col-xs-12 col-sm-12'}>
+							<ButtonSolid
+								block
+								secondary
+								disabled={rooms.length >= boxLimits.maxRooms || disableAdditions}
+								onClick={addRoom}
+							>
+								Agregar Habitación
+							</ButtonSolid>
+						</div>
+						<div className={'col-lg-12 col-md-12 col-xs-12 col-sm-12 mt-1'}>
+							<ButtonSolid
+								block
+								secondary
+								onClick={() => {
+									apply();
+									hide();
+								}}
+							>
+								Aplicar
+							</ButtonSolid>
+						</div>
 					</div>
 				</div>
-			</div>}
-		</div>
+			)}
+		</SelectorContainer>
 	);
 };
 
