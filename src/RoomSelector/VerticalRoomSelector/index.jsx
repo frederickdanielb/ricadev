@@ -10,6 +10,8 @@ export default function VerticalRoomSelector({
 	removeRoom,
 	disableAdditions,
 	addRoom,
+	onApply,
+	applyText,
 }) {
 	return (
 		<SelectorContainer>
@@ -46,11 +48,11 @@ export default function VerticalRoomSelector({
 							block
 							secondary
 							onClick={() => {
-								apply();
+								onApply();
 								hide();
 							}}
 						>
-							Aplicar
+							{applyText}
 						</ButtonSolid>
 					</div>
 				</div>

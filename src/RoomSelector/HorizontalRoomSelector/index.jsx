@@ -12,6 +12,8 @@ export default function HorizontalRoomSelector({
 	disableAdditions,
 	addRoom,
 	show,
+	onApply,
+	applyText,
 }) {
 	return (
 		<SelectorContainer>
@@ -57,11 +59,11 @@ export default function HorizontalRoomSelector({
 								block
 								secondary
 								onClick={() => {
-									apply();
+									onApply();
 									hide();
 								}}
 							>
-								Aplicar
+								{applyText}
 							</ButtonSolid>
 						</div>
 					</div>

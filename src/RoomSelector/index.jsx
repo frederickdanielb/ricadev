@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import HorizontalRoomSelector from './HorizontalRoomSelector';
 import VerticalRoomSelector from './VerticalRoomSelector';
 
-const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
+const RoomSelector = ({
+	onChangeRooms,
+	onApply,
+	applyText = 'Aplicar',
+	type = 'horizontal',
+	limits,
+}) => {
 	const defaultLimits = {
 		maxPax: 9,
 		maxRooms: 3,
@@ -48,6 +54,7 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 				(childs.length > 0 ? ' + ' + childs.length + ' Niños' : ''),
 		);
 		onChangeRooms(rooms);
+		onApply();
 	};
 	const addRoom = (evt) => {
 		evt.preventDefault();
@@ -123,6 +130,8 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 					removeRoom={removeRoom}
 					boxLimits={boxLimits}
 					show={show}
+					onApply={apply}
+					applyText={applyText}
 					updateRoom={updateRoom}
 					disableAdditions={disableAdditions}
 					roomDescription={roomDescription}
@@ -136,6 +145,8 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 					removeRoom={removeRoom}
 					boxLimits={boxLimits}
 					show={show}
+					onApply={apply}
+					applyText={applyText}
 					updateRoom={updateRoom}
 					disableAdditions={disableAdditions}
 					roomDescription={roomDescription}
