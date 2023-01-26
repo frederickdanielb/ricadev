@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './RoomSelector.scss';
 import PropTypes from 'prop-types';
 import HorizontalRoomSelector from './HorizontalRoomSelector';
+import VerticalRoomSelector from './VerticalRoomSelector';
 
 const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 	const defaultLimits = {
@@ -116,6 +117,19 @@ const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
 		<div ref={ref}>
 			{type === 'horizontal' && (
 				<HorizontalRoomSelector
+					rooms={rooms}
+					showSelector={showSelector}
+					addRoom={addRoom}
+					removeRoom={removeRoom}
+					boxLimits={boxLimits}
+					show={show}
+					updateRoom={updateRoom}
+					disableAdditions={disableAdditions}
+					roomDescription={roomDescription}
+				/>
+			)}
+			{type === 'vertical' && (
+				<VerticalRoomSelector
 					rooms={rooms}
 					showSelector={showSelector}
 					addRoom={addRoom}
