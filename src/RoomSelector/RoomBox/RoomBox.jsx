@@ -1,74 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { RoomBoxContainer, RoomSelectorTitle } from '../styled';
 import { Card, Row } from 'react-bootstrap';
 import { ButtonSolid } from '../../Buttons';
+import roomSelector, { room_selector_actions } from '../roomSelectorReducer';
 
-const RoomBox = ({ idx, room, onUpdate, disableAddButton, onRemove, limits }) => {
-	const [adults, setAdults] = useState(limits.minAdultsPerRoom);
-	const [childs, setChilds] = useState([]);
-	const [isFirstLoad, setIsFirstLoad] = useState(true);
-	/*useEffect(() => {
-		setAdults(room.adults);
-		setChilds(room.childs);
-	}, [room]);*/
+const RoomBox = ({ idx, onUpdate, disableAddButton, onRemove, limits }) => {
+	const [room, dispatch] = useReducer(roomSelector, {
+		adults: limits.minAdultsPerRoom,
+		childs: [],
+	});
 
-	/*	useEffect(() => {
-		if (isFirstLoad) {
-			setIsFirstLoad(false);
-		} else {
-			onUpdate(idx, { adults: adults, childs: childs });
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [adults, childs?.length]);*/
+	useEffect(() => {
+		onUpdate(idx, room);
+	}, [room]);
+
 	const checkAdultLimits = (newValue) => {
 		return newValue <= limits.maxAdultsPerRoom && newValue >= limits.minAdultsPerRoom;
 	};
 	const checkChildLimits = (newValue) => {
-		return newValue < limits.maxChildsPerRoom && newValue >= limits.minChildsPerRoom;
+		return newValue <= limits.maxChildsPerRoom && newValue >= limits.minChildsPerRoom;
 	};
 	const checkChildAgeLimits = (newValue) => {
 		return newValue <= limits.maxAgeChild && newValue >= limits.minAgeChild;
 	};
 	const addAdult = (evt) => {
 		evt.preventDefault();
-		let newValue = adults + 1;
-		if (checkAdultLimits(newValue)) setAdults(newValue);
+		if (checkAdultLimits(room.adults + 1)) {
+			dispatch({ type: room_selector_actions.ADD_ADULT });
+		}
 	};
 	const addChild = (evt) => {
 		evt.preventDefault();
-		setChilds((currentChilds) => {
-			console.log('try adding', currentChilds);
-			if (checkChildLimits(currentChilds.length)) {
-				console.log('adding');
-				let modifiedChilds = currentChilds;
-				console.log('modified childs', currentChilds);
-				return modifiedChilds.push(limits.minAgeChild);
-			}
-			console.log('not adding', currentChilds.length);
-			console.log('not adding', currentChilds);
-			return currentChilds;
-		});
+		if (checkChildLimits(room.childs.length + 1)) {
+			dispatch({ type: room_selector_actions.ADD_CHILD });
+		}
 	};
 	const removeAdult = (evt) => {
 		evt.preventDefault();
-		let newValue = adults - 1;
-		if (checkAdultLimits(newValue)) setAdults(newValue);
+		if (checkAdultLimits(room.adults - 1)) {
+			dispatch({ type: room_selector_actions.REMOVE_ADULT });
+		}
 	};
 	const removeChild = (evt) => {
 		evt.preventDefault();
-		/*let newValue = childs - 1;
-		if (checkChildLimits(newValue)) setChilds(newValue);*/
-		setChilds((currentChilds) => {
-			console.log('try adding', currentChilds);
-			if (checkChildLimits(currentChilds.length)) {
-				console.log('adding');
-				let modifiedChilds = currentChilds;
-				console.log('modified childs', currentChilds);
-				return modifiedChilds.slice(-1);
-			}
-			console.log('not adding', currentChilds.length);
-			return currentChilds;
-		});
+		if (checkChildLimits(room.childs.length - 1)) {
+			dispatch({ type: room_selector_actions.REMOVE_CHILD });
+		}
 	};
 	const removeRoom = (evt) => {
 		evt.preventDefault();
@@ -95,29 +72,32 @@ const RoomBox = ({ idx, room, onUpdate, disableAddButton, onRemove, limits }) =>
 	};
 	const addAgeFirstChild = (evt) => {
 		evt.preventDefault();
+		if (checkChildAgeLimits(room.childs[0] + 1)) {
+			dispatch({ type: room_selector_actions.ADD_AGE, idx: 0 });
+		}
+		/*
 		setChilds((currentChilds) => addAge(1, currentChilds));
+*/
 	};
 	const removeAgeFirstChild = (evt) => {
 		evt.preventDefault();
-		setChilds((currentChilds) => removeAge(1, currentChilds));
+		if (checkChildAgeLimits(room.childs[0] - 1)) {
+			dispatch({ type: room_selector_actions.REMOVE_AGE, idx: 0 });
+		}
 	};
-	/*	const removeAgeFirstChild = (evt) => {
-		evt.preventDefault();
-		let newValue = (ageChilds[0].age ?? 0) - 1;
-		if (checkChildAgeLimits(newValue)) setAgeChilds([{ age: newValue }, { age: ageChilds[1].age }]);
-	};*/
 	const addAgeSecondChild = (evt) => {
 		evt.preventDefault();
-		/*let newValue = (ageChilds[1].age ?? 0) + 1;
-		if (checkChildAgeLimits(newValue)) setAgeChilds([{ age: ageChilds[0].age }, { age: newValue }]);*/
-		setChilds((currentChilds) => addAge(2, currentChilds));
+		if (checkChildAgeLimits(room.childs[1] + 1)) {
+			dispatch({ type: room_selector_actions.ADD_AGE, idx: 1 });
+		}
 	};
 	const removeAgeSecondChild = (evt) => {
 		evt.preventDefault();
-		/*	let newValue = (ageChilds[1].age ?? 0) - 1;
-		if (checkChildAgeLimits(newValue)) setAgeChilds([{ age: ageChilds[0].age }, { age: newValue }]);*/
-		setChilds((currentChilds) => removeAge(2, currentChilds));
+		if (checkChildAgeLimits(room.childs[1] - 1)) {
+			dispatch({ type: room_selector_actions.REMOVE_AGE, idx: 1 });
+		}
 	};
+
 	return (
 		<RoomBoxContainer className={'mb-3'}>
 			<div
@@ -149,12 +129,12 @@ const RoomBox = ({ idx, room, onUpdate, disableAddButton, onRemove, limits }) =>
 							-{' '}
 						</ButtonSolid>
 						<input
+							readOnly
 							type="text"
 							id={'roombox-' + idx}
 							name="quantity"
 							className="form-control qty-input input-number"
-							onChange={() => {}}
-							value={adults}
+							value={room.adults}
 						/>
 						<ButtonSolid
 							secondary
@@ -184,12 +164,12 @@ const RoomBox = ({ idx, room, onUpdate, disableAddButton, onRemove, limits }) =>
 							-{' '}
 						</ButtonSolid>
 						<input
+							readOnly
 							type="text"
 							id={'roombox-' + idx}
 							name="quantity"
 							className="form-control qty-input input-number"
-							onChange={() => {}}
-							value={childs.length}
+							value={room.childs.length}
 						/>
 						<ButtonSolid
 							secondary
@@ -206,82 +186,84 @@ const RoomBox = ({ idx, room, onUpdate, disableAddButton, onRemove, limits }) =>
 					</div>
 				</div>
 			</Row>
-			{childs.length > 0 && (
-				<div className="qty-box col-md-6 col-xl-6">
-					<label>Edad Niño 1</label>
-					<div className="input-group">
-						<ButtonSolid
-							secondary
-							type="button"
-							onClick={removeAgeFirstChild}
-							className="btn"
-							data-type="minus"
-							data-field=""
-						>
-							{' '}
-							-{' '}
-						</ButtonSolid>
-						<input
-							type="text"
-							id={'roombox-age-' + idx}
-							name="quantity"
-							className="form-control qty-input input-number"
-							onChange={() => {}}
-							value={childs[0]}
-						/>
-						<ButtonSolid
-							secondary
-							type="button"
-							disabled={disableAddButton}
-							onClick={addAgeFirstChild}
-							className="btn"
-							data-type="plus"
-							data-field=""
-						>
-							{' '}
-							+{' '}
-						</ButtonSolid>
+			<Row>
+				{room.childs.length > 0 && (
+					<div className="qty-box col-md-6 col-xl-6">
+						<label>Edad Niño 1</label>
+						<div className="input-group">
+							<ButtonSolid
+								secondary
+								type="button"
+								onClick={removeAgeFirstChild}
+								className="btn"
+								data-type="minus"
+								data-field=""
+							>
+								{' '}
+								-{' '}
+							</ButtonSolid>
+							<input
+								readOnly
+								type="text"
+								id={'roombox-age-' + idx}
+								name="quantity"
+								className="form-control qty-input input-number"
+								value={room.childs[0]}
+							/>
+							<ButtonSolid
+								secondary
+								type="button"
+								disabled={disableAddButton}
+								onClick={addAgeFirstChild}
+								className="btn"
+								data-type="plus"
+								data-field=""
+							>
+								{' '}
+								+{' '}
+							</ButtonSolid>
+						</div>
 					</div>
-				</div>
-			)}
-			{childs.length > 1 && (
-				<div className="qty-box col-md-6 col-xl-6">
-					<label>Edad Niño 2</label>
-					<div className="input-group">
-						<ButtonSolid
-							secondary
-							type="button"
-							onClick={removeAgeSecondChild}
-							className="btn"
-							data-type="minus"
-							data-field=""
-						>
-							{' '}
-							-{' '}
-						</ButtonSolid>
-						<input
-							type="text"
-							id={'roombox-age-' + idx}
-							name="quantity"
-							className="form-control qty-input input-number"
-							onChange={() => {}}
-							value={childs[1]}
-						/>
-						<ButtonSolid
-							secondary
-							type="button"
-							disabled={disableAddButton}
-							onClick={addAgeSecondChild}
-							className="btn"
-							data-type="plus"
-							data-field=""
-						>
-							{' '}
-							+{' '}
-						</ButtonSolid>
+				)}
+				{room.childs.length > 1 && (
+					<div className="qty-box col-md-6 col-xl-6">
+						<label>Edad Niño 2</label>
+						<div className="input-group">
+							<ButtonSolid
+								secondary
+								type="button"
+								onClick={removeAgeSecondChild}
+								className="btn"
+								data-type="minus"
+								data-field=""
+							>
+								{' '}
+								-{' '}
+							</ButtonSolid>
+							<input
+								readOnly
+								type="text"
+								id={'roombox-age-' + idx}
+								name="quantity"
+								className="form-control qty-input input-number"
+								value={room.childs[1]}
+							/>
+							<ButtonSolid
+								secondary
+								type="button"
+								disabled={disableAddButton}
+								onClick={addAgeSecondChild}
+								className="btn"
+								data-type="plus"
+								data-field=""
+							>
+								{' '}
+								+{' '}
+							</ButtonSolid>
+						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</Row>
 			<div className={'mb-3'}></div>
 		</RoomBoxContainer>
 	);
