@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import RoomBox from './RoomBox/RoomBox';
 import './RoomSelector.scss';
-import { ButtonSolid } from '../Buttons';
 import PropTypes from 'prop-types';
-import { SelectorContainer } from './styled';
 import HorizontalRoomSelector from './HorizontalRoomSelector';
 
 const RoomSelector = ({ onChangeRooms, type = 'horizontal', limits }) => {
