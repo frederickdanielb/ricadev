@@ -54,7 +54,6 @@ const RoomSelector = ({
 				(childs.length > 0 ? ' + ' + childs.length + ' Niños' : ''),
 		);
 		onChangeRooms(rooms);
-		onApply();
 	};
 	const addRoom = (evt) => {
 		evt.preventDefault();
@@ -130,7 +129,7 @@ const RoomSelector = ({
 					removeRoom={removeRoom}
 					boxLimits={boxLimits}
 					show={show}
-					onApply={apply}
+					onApply={() => onApply(rooms)}
 					applyText={applyText}
 					updateRoom={updateRoom}
 					disableAdditions={disableAdditions}
@@ -145,7 +144,7 @@ const RoomSelector = ({
 					removeRoom={removeRoom}
 					boxLimits={boxLimits}
 					show={show}
-					onApply={apply}
+					onApply={() => onApply(rooms)}
 					applyText={applyText}
 					updateRoom={updateRoom}
 					disableAdditions={disableAdditions}

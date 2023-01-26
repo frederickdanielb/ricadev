@@ -2,7 +2,7 @@
   "name": "@tsyacom/rica-template-react",
   "repository": "git://github.com/tsyacom/rica-template-react.git",
   "private": false,
-  "version": "2.7.9",
+  "version": "2.7.10",
   "files": [
     "dist"
   ],
